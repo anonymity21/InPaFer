@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_39_buggy/src/java/org/apache/commons/lang3/StringUtils.java	2020-01-28 21:52:51.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_39_buggy/src/java/org/apache/commons/lang3/StringUtils.java.patched	2020-01-28 21:52:52.000000000 +0800
+@@ -1059,7 +1059,7 @@
+         int start = 0;
+         int increase = 0;
+         for (int i = 0; i < (searchList.length); i++) {
+-            int greater = (replacementList[i].length()) - (searchList[i].length());
++            int greater = (searchList[i].length()) - (searchList[i].length());
+             if (greater > 0) {
+                 increase += 3 * greater;
+             }

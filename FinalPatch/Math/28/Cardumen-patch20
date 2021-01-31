@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java	2019-03-18 10:36:59.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java.patched	2019-03-18 10:37:00.000000000 +0800
+@@ -14,7 +14,7 @@
+     private java.lang.Integer getPivotColumn(org.apache.commons.math3.optimization.linear.SimplexTableau tableau) {
+         double minValue = 0;
+         java.lang.Integer minPos = null;
+-        for (int i = tableau.getNumObjectiveFunctions(); i < ((tableau.getWidth()) - 1); i++) {
++ 		for (int i = tableau.getNumObjectiveFunctions(); minValue == 0; i++) {
+             final double entry = tableau.getEntry(0, i);
+             if (entry < minValue) {
+                 minValue = entry;

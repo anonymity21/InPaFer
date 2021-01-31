@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_13_buggy/src//com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2019-03-18 21:05:18.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_13_buggy/src//com/google/javascript/jscomp/PeepholeOptimizationsPass.java.patched	2019-03-18 21:05:18.000000000 +0800
+@@ -90,7 +90,7 @@
+         if ((node.isFunction()) || (node.isScript())) {
+             com.google.javascript.jscomp.PeepholeOptimizationsPass.ScopeState previous = traversalState.peek();
+             if (!(previous.traverseChildScopes)) {
+-                return false;
++ 				return (node == null) || (!(node.isGetProp()));
+             }
+             traversalState.push();
+         }

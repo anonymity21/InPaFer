@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_133_buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java	2019-03-13 12:53:49.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_133_buggy/src/com/google/javascript/jscomp/parsing/JsDocInfoParser.java.patched	2019-03-13 12:53:50.000000000 +0800
+@@ -856,7 +856,7 @@
+         SINGLE_LINE;}
+     @java.lang.SuppressWarnings("fallthrough")
+     private com.google.javascript.jscomp.parsing.JsDocInfoParser.ExtractionInfo extractMultilineTextualBlock(com.google.javascript.jscomp.parsing.JsDocToken token, com.google.javascript.jscomp.parsing.JsDocInfoParser.WhitespaceOption option) {
+-        if (((token == (com.google.javascript.jscomp.parsing.JsDocToken.EOC)) || (token == (com.google.javascript.jscomp.parsing.JsDocToken.EOL))) || (token == (com.google.javascript.jscomp.parsing.JsDocToken.EOF))) {
++        if ((this.unreadToken) != null) {
+             return new com.google.javascript.jscomp.parsing.JsDocInfoParser.ExtractionInfo("", token);
+         }
+         stream.update();

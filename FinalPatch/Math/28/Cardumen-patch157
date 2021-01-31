@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java	2019-03-18 10:43:47.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java.patched	2019-03-18 10:43:47.000000000 +0800
+@@ -50,7 +50,7 @@
+                     for (int i = 0; i < (tableau.getNumArtificialVariables()); i++) {
+                         int column = i + (tableau.getArtificialVariableOffset());
+                         final double entry = tableau.getEntry(row, column);
+-                        if ((org.apache.commons.math3.util.Precision.equals(entry, 1.0, maxUlps)) && (row.equals(tableau.getBasicRow(column)))) {
++ 						if ((org.apache.commons.math3.util.Precision.compareTo(entry, 0.0, maxUlps)) > 0) {
+                             return row;
+                         }
+                     }

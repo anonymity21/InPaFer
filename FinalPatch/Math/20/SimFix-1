@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy//src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2019-03-25 16:47:25.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy//src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java.patched	2019-03-25 16:47:26.000000000 +0800
+@@ -497,7 +497,7 @@
+                     repaired[i] = 0;
+                 } else
+                     if ((x[i]) > 1.0) {
+-                        repaired[i] = 1.0;
++                        repaired[i] = 0.0;
+                     } else {
+                         repaired[i] = x[i];
+                     }

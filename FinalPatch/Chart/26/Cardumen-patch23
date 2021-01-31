@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java	2019-03-14 15:52:35.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java.patched	2019-03-14 15:52:35.000000000 +0800
+@@ -64,7 +64,7 @@
+         this.listenerList = new javax.swing.event.EventListenerList();
+     }
+     public boolean isVisible() {
+-        return this.visible;
++ 		return (plot) instanceof org.jfree.chart.plot.PiePlot3D;
+     }
+     public void setVisible(boolean flag) {
+         if (flag != (this.visible)) {

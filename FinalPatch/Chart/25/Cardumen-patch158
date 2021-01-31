@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/general/DatasetUtilities.java	2019-03-14 21:20:44.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/general/DatasetUtilities.java.patched	2019-03-14 21:20:44.000000000 +0800
+@@ -197,7 +197,7 @@
+         return true;
+     }
+     public static boolean isEmptyOrNull(org.jfree.data.category.CategoryDataset dataset) {
+-        if (dataset == null) {
++ 		if (!(dataset instanceof org.jfree.chart.urls.CustomXYURLGenerator)) {
+             return true;
+         }
+         int rowCount = dataset.getRowCount();

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_33_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java	2020-01-28 22:01:41.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_33_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java.patched	2020-01-28 22:01:41.000000000 +0800
+@@ -139,7 +139,7 @@
+         columnsToDrop.add(0);
+         for (int i = getNumObjectiveFunctions(); i < (getArtificialVariableOffset()); i++) {
+             final double entry = tableau.getEntry(0, i);
+-            if ((org.apache.commons.math3.util.Precision.compareTo(entry, 0.0, maxUlps)) > 0) {
++            if ((org.apache.commons.math3.util.Precision.compareTo(entry, 0.0, this.epsilon)) > 0) {
+                 columnsToDrop.add(i);
+             }
+         }

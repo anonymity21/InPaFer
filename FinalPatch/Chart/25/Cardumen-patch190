@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	2019-03-14 20:48:35.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java.patched	2019-03-14 20:48:36.000000000 +0800
+@@ -14,8 +14,8 @@
+     }
+     public java.lang.Number getMeanValue(int row, int column) {
+         java.lang.Number result = null;
+-        org.jfree.data.statistics.MeanAndStandardDeviation masd = ((org.jfree.data.statistics.MeanAndStandardDeviation) (this.data.getObject(row, column)));
+-        if (masd != null) {
++ 		org.jfree.data.statistics.MeanAndStandardDeviation masd = ((org.jfree.data.statistics.MeanAndStandardDeviation) (org.jfree.data.statistics.DefaultStatisticalCategoryDataset.this.data.getObject(row, column)));
++ 		if ((maximumRangeValue) < 0.0) {
+             result = masd.getMean();
+         }
+         return result;

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_51_buggy/src/java/org/apache/commons/lang/BooleanUtils.java	2019-03-13 12:43:47.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_51_buggy/src/java/org/apache/commons/lang/BooleanUtils.java.patched	2019-03-13 12:43:47.000000000 +0800
+@@ -209,7 +209,7 @@
+                     if (ch == 'y') {
+                         return (((str.charAt(1)) == 'e') || ((str.charAt(1)) == 'E')) && (((str.charAt(2)) == 's') || ((str.charAt(2)) == 'S'));
+                     }
+-                    if (ch == 'Y') {
++                    if (str != null) {
+                         return (((str.charAt(1)) == 'E') || ((str.charAt(1)) == 'e')) && (((str.charAt(2)) == 'S') || ((str.charAt(2)) == 's'));
+                     }
+                 }

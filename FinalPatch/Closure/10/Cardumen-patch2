@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_10_buggy/src//com/google/javascript/jscomp/NodeUtil.java	2019-03-19 10:09:17.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_10_buggy/src//com/google/javascript/jscomp/NodeUtil.java.patched	2019-03-19 10:09:18.000000000 +0800
+@@ -888,7 +888,7 @@
+     }
+     static final com.google.javascript.jscomp.NodeUtil.MayBeStringResultPredicate MAY_BE_STRING_PREDICATE = new com.google.javascript.jscomp.NodeUtil.MayBeStringResultPredicate();
+     static boolean mayBeString(com.google.javascript.rhino.Node n) {
+-        return com.google.javascript.jscomp.NodeUtil.mayBeString(n, true);
++ 		return com.google.javascript.jscomp.NodeUtil.mayBeString(n, ((n.hasChildren()) && (n.getFirstChild().isCatch())));
+     }
+     static boolean mayBeString(com.google.javascript.rhino.Node n, boolean recurse) {
+         if (recurse) {

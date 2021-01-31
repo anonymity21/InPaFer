@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_70_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BisectionSolver.java	2019-03-17 22:41:19.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_70_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BisectionSolver.java.patched	2019-03-17 22:41:19.000000000 +0800
+@@ -16,7 +16,7 @@
+         return solve(f, min, max);
+     }
+     public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+-        return solve(min, max);
++ 		return solve(f, defaultRelativeAccuracy, max);
+     }
+     public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+         clearResult();

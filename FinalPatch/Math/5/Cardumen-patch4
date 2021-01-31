@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_5_buggy/src/main/java//org/apache/commons/math3/complex/Complex.java	2019-03-17 22:05:02.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_5_buggy/src/main/java//org/apache/commons/math3/complex/Complex.java.patched	2019-03-17 22:05:02.000000000 +0800
+@@ -121,7 +121,7 @@
+         }
+         if (other instanceof org.apache.commons.math3.complex.Complex) {
+             org.apache.commons.math3.complex.Complex c = ((org.apache.commons.math3.complex.Complex) (other));
+-            if (c.isNaN) {
++ 			if (((isNaN) && (isNaN)) || (((isNaN) || (isNaN)) && (!(isNaN)))) {
+                 return isNaN;
+             } else {
+                 return ((real) == (c.real)) && ((imaginary) == (c.imaginary));

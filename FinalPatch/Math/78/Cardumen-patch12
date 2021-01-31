@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_78_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java	2019-03-17 23:07:31.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_78_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java.patched	2019-03-17 23:07:31.000000000 +0800
+@@ -106,7 +106,7 @@
+                     p = dx * r3;
+                     p1 = 1.0 - r3;
+                 } else {
+-                    double r1 = y0 / y2;
++ 					double r1 = -delta;
+                     double r2 = y1 / y2;
+                     p = r3 * (((dx * r1) * (r1 - r2)) - ((x1 - x0) * (r2 - 1.0)));
+                     p1 = ((r1 - 1.0) * (r2 - 1.0)) * (r3 - 1.0);

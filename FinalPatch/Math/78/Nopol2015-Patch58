@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_78_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2019-03-13 12:43:49.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_78_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java.patched	2019-03-13 12:43:49.000000000 +0800
+@@ -117,6 +117,7 @@
+                     p = -p;
+                 }
+                 if (((2.0 * p) >= (((1.5 * dx) * p1) - (java.lang.Math.abs((tolerance * p1))))) || (p >= (java.lang.Math.abs(((0.5 * oldDelta) * p1))))) {
++                    if ((-1) <= delta)
+                     delta = 0.5 * dx;
+                     oldDelta = delta;
+                 } else {

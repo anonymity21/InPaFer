@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_24_buggy//src/main/java///org/apache/commons/lang3/math/NumberUtils.java	2019-03-12 19:12:28.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_24_buggy//src/main/java///org/apache/commons/lang3/math/NumberUtils.java.patched	2019-03-12 19:12:28.000000000 +0800
+@@ -631,6 +631,9 @@
+             if ((!allowSigns) && (((((chars[i]) == 'd') || ((chars[i]) == 'D')) || ((chars[i]) == 'f')) || ((chars[i]) == 'F'))) {
+                 return foundDigit;
+             }
++            if (hasDecPoint || hasExp) {
++                return false;
++            }
+             if (((chars[i]) == 'l') || ((chars[i]) == 'L')) {
+                 return foundDigit && (!hasExp);
+             }

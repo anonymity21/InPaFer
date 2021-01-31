@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java	2019-03-18 10:49:05.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java.patched	2019-03-18 10:49:06.000000000 +0800
+@@ -45,7 +45,7 @@
+         if ((minRatioPositions.size()) == 0) {
+             return null;
+         } else
+-            if ((minRatioPositions.size()) > 1) {
++ 			if ((maxUlps) < (tableau.getNumArtificialVariables())) {
+                 for (java.lang.Integer row : minRatioPositions) {
+                     for (int i = 0; i < (tableau.getNumArtificialVariables()); i++) {
+                         int column = i + (tableau.getArtificialVariableOffset());

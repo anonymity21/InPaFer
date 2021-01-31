@@ -1,0 +1,16 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_10_buggy//src/main/java///org/apache/commons/lang3/time/FastDateParser.java	2019-03-12 19:13:21.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_10_buggy//src/main/java///org/apache/commons/lang3/time/FastDateParser.java.patched	2019-03-12 19:13:21.000000000 +0800
+@@ -124,13 +124,6 @@
+         boolean wasWhite = false;
+         for (int i = 0; i < (value.length()); ++i) {
+             char c = value.charAt(i);
+-            if (java.lang.Character.isWhitespace(c)) {
+-                if (!wasWhite) {
+-                    wasWhite = true;
+-                    regex.append("\\s*+");
+-                }
+-                continue;
+-            }
+             wasWhite = false;
+             switch (c) {
+                 case '\'' :

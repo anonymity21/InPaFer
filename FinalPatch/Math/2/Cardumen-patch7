@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java//org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	2019-03-17 22:11:37.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java//org/apache/commons/math3/distribution/AbstractIntegerDistribution.java.patched	2019-03-17 22:11:38.000000000 +0800
+@@ -47,7 +47,7 @@
+             }
+             k = 1.0 / k;
+             tmp = mu + (k * sigma);
+-            if (tmp < upper) {
++ 			if (p == 0.0) {
+                 upper = ((int) (java.lang.Math.ceil(tmp))) - 1;
+             }
+         }

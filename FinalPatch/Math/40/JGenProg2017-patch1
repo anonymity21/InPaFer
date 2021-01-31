@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy//src/main/java///org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2019-03-12 19:42:15.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy//src/main/java///org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java.patched	2019-03-12 19:42:15.000000000 +0800
+@@ -131,7 +131,7 @@
+             }
+             if ((nbPoints > 2) && ((end - start) != nbPoints)) {
+                 nbPoints = end - start;
+-                java.lang.System.arraycopy(x, start, x, 0, nbPoints);
++                java.lang.System.arraycopy(x, 1, x, 0, nbPoints);
+                 java.lang.System.arraycopy(y, start, y, 0, nbPoints);
+                 signChangeIndex -= start;
+             } else

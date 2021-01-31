@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_13_buggy//src//com/google/javascript/jscomp/PeepholeOptimizationsPass.java	2019-03-12 19:04:31.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_13_buggy//src//com/google/javascript/jscomp/PeepholeOptimizationsPass.java.patched	2019-03-12 19:04:32.000000000 +0800
+@@ -59,7 +59,6 @@
+     }
+     private void traverse(com.google.javascript.rhino.Node node) {
+         if (!(shouldVisit(node))) {
+-            return;
+         }
+         int visits = 0;
+         do {

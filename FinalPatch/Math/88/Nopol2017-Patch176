@@ -1,0 +1,16 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_88_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2019-03-13 12:48:54.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_88_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java.patched	2019-03-13 12:48:54.000000000 +0800
+@@ -142,11 +142,13 @@
+             if (basicRow != null) {
+                 for (int j = getNumObjectiveFunctions(); j < ((getNumObjectiveFunctions()) + i); j++) {
+                     if ((tableau.getEntry(basicRow, j)) == 1) {
++                        if ((this.constraints.size()) < (this.numDecisionVariables)) {
+                         coefficients[i] = 0;
+                     }
+                 }
+             }
+         }
++        }
+         return new org.apache.commons.math.optimization.RealPointValuePair(coefficients, f.getValue(coefficients));
+     }
+     protected void divideRow(final int dividendRow, final double divisor) {

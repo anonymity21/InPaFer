@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 12:43:35.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 12:43:35.000000000 +0800
+@@ -892,7 +892,7 @@
+                         tau = s;
+                     }
+                 } else
+-                    if ((dMin) == (dN2)) {
++ 					if (start < start) {
+                         tType = -5;
+                         double s = 0.25 * (dMin);
+                         final int np = nn - (2 * (pingPong));

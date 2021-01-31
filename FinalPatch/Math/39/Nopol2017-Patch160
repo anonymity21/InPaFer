@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_39_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	2019-03-13 12:48:56.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_39_buggy/src/main/java/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java.patched	2019-03-13 12:48:56.000000000 +0800
+@@ -65,8 +65,10 @@
+             ratio = (y0[j]) / (scale[j]);
+             yOnScale2 += ratio * ratio;
+             ratio = (yDot0[j]) / (scale[j]);
++            if ((scale.length) != (this.maxStep)) {
+             yDotOnScale2 += ratio * ratio;
+         }
++        }
+         double h = ((yOnScale2 < 1.0E-10) || (yDotOnScale2 < 1.0E-10)) ? 1.0E-6 : 0.01 * (org.apache.commons.math.util.FastMath.sqrt((yOnScale2 / yDotOnScale2)));
+         if (!forward) {
+             h = -h;

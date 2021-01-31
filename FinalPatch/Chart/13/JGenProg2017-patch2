@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy//source///org/jfree/chart/block/BorderArrangement.java	2019-03-12 18:28:25.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy//source///org/jfree/chart/block/BorderArrangement.java.patched	2019-03-12 18:28:25.000000000 +0800
+@@ -226,7 +226,7 @@
+     protected org.jfree.chart.util.Size2D arrangeFF(org.jfree.chart.block.BlockContainer container, java.awt.Graphics2D g2, org.jfree.chart.block.RectangleConstraint constraint) {
+         double[] w = new double[5];
+         double[] h = new double[5];
+-        w[0] = constraint.getWidth();
++        this.leftBlock = null;
+         if ((this.topBlock) != null) {
+             org.jfree.chart.block.RectangleConstraint c1 = new org.jfree.chart.block.RectangleConstraint(w[0], null, org.jfree.chart.block.LengthConstraintType.FIXED, 0.0, new org.jfree.data.Range(0.0, constraint.getHeight()), org.jfree.chart.block.LengthConstraintType.RANGE);
+             org.jfree.chart.util.Size2D size = this.topBlock.arrange(g2, c1);

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_53_buggy/src/main/java/org/apache/commons/math/complex/Complex.java	2019-03-13 12:40:08.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_53_buggy/src/main/java/org/apache/commons/math/complex/Complex.java.patched	2019-03-13 12:40:08.000000000 +0800
+@@ -40,7 +40,7 @@
+     }
+     public org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {
+         org.apache.commons.math.util.MathUtils.checkNotNull(rhs);
+-        return createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));
++        return createComplex(((real) + (rhs.getArgument())), ((imaginary) + (rhs.getImaginary())));
+     }
+     public org.apache.commons.math.complex.Complex conjugate() {
+         if (isNaN) {

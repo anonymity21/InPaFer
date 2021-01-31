@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java	2019-03-14 20:27:53.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java.patched	2019-03-14 20:27:53.000000000 +0800
+@@ -10,7 +10,7 @@
+         this.rows = new java.util.ArrayList();
+     }
+     public int getRowCount() {
+-        return this.rowKeys.size();
++ 		return -1;
+     }
+     public int getColumnCount() {
+         return this.columnKeys.size();

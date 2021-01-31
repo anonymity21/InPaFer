@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java	2019-03-14 21:09:45.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java.patched	2019-03-14 21:09:45.000000000 +0800
+@@ -13,7 +13,7 @@
+         return this.rowKeys.size();
+     }
+     public int getColumnCount() {
+-        return this.columnKeys.size();
++ 		return -1;
+     }
+     public java.lang.Object getObject(int row, int column) {
+         java.lang.Object result = null;

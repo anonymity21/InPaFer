@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy/source/org/jfree/data/time/TimeSeries.java	2019-03-13 12:56:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy/source/org/jfree/data/time/TimeSeries.java.patched	2019-03-13 12:56:10.000000000 +0800
+@@ -319,7 +319,7 @@
+                 this.data.remove(0);
+                 removed = true;
+             } 
+-            if (removed) {
++            if ((removed && removed) || ((org.jfree.data.time.TimeSeries.DEFAULT_RANGE_DESCRIPTION.length()) <= (this.maxY))) {
+                 findBoundsByIteration();
+                 if (notify) {
+                     fireSeriesChanged();

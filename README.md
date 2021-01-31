@@ -1,18 +1,12 @@
 # InPaFer
 
-* I. Introduction of InPaFer
+* I. Introduction of quantitative study
 * II. Environment setup
-* III. Run InPaFer Step-by-Step
-* IV. Evaluation Result for User Stury
-* V.Structure of the project
+* III. How to run
+* IV. Structure of the project
 
 ## I. Introduction
-This repository has two branch: *master* branch shows the implementaion of Eclipse plugin and *experiment* branch shows the evaluation of simulated experiment.
-
-*InPaFer* is an interactive patch filtering approach to provide tool support for patch review and debugging. We implemented our approach as an Eclipse plugin project, which includes a user interface to allow the developer to easily browse the patches and the questions, as well as a diff view to visualize the effect of a patch on a test execution.
-The following figure is the screenshot of our approach.
-
-![The screenshot of InPaFer.](./figure/plugin.jpeg)
+To evaluate the effectiveness of InPaFer, we conducted a quantitative study. Specially, we measured  ratio of incorrect patches that are successfully filtered out by InPaFer and the number of filtering steps under different filtering orders. We also conducted two sensitivity analyses for InPaFer to attributes and developers' errors. 
 
 
 ## II. Environment
@@ -26,7 +20,7 @@ The following figure is the screenshot of our approach.
 
 #### Before running
 
-* Configure the following path in File [Constant.java](./src/patchfilter/model/config/Constant.java).
+* Configure the following path in File [Constant.java](./src/main/java/config/Constant.java).
 
   * HOME="homoe_of_this_project"
   * PROJECT_HOME="home_of_data"
@@ -41,44 +35,69 @@ The following figure is the screenshot of our approach.
 
 #### Step 1, Obtain the extra information
 
-* Run the Main class `patchfilter.model.Main.PatchVariationMain`:
+* Run the Main class `Main.PatchVariationMain`:
 
-   `Run As`→`Run Configurations…` →`Arguments` : set the following arguments as Program Arguments.
+  `Run As`→`Run Configurations…` →`Arguments` : set the following arguments as Program Arguments.
 
-   		* `-project` : the project name of buggy program of benchmark. (`-project=Math` for the example)
-   		* `-start` : the bug id of start running project. (`-start=41` for the example)
-   		* `-end` : the bug id of end running project. (`-end=41` for the example)
+    * `-project` : the project name of buggy program of benchmark. (`-project=Math` for the example)
+   	* `-start` : the bug id of start running project. (`-start=41` for the example)
+   	* `-end` : the bug id of end running project. (`-end=41` for the example)
 
-   	After running the class `patchfilter.model.Main.PatchVariationMain`, you will obtain two directories: cache and record, for the next step.
-
-
-#### Step 2, Run the plugin project
-
-* From the project file:
-	* `Run As` -> `Eclipse Application`: a new eclipse will be opened.
-	* Import the project from the new eclipse.
-	* Select the imported project and `Window` -> `Show View` -> `Other` -> `Sample Category` -> `Query View` and  `Diff View`.
+   	After running the class `Main.PatchVariationMain`, you will obtain two directories: cache and record, for the next step.
 
 
-## IV.Evaluation
+#### Step 2, Obtain results of quantitative study
 
-To evaluate the usefulness of InPaFerin a realistic program repair scenario, we conducted a user study. We recruited 30 participants to conduct our user study. In order to alleviate the threats from participants and encourage them to carefully finish the experiment, we will pay more than 40% if the participant can successfully fix one bug.
+* RQ1: Effectiveness && Efforts
+  * Run the Main class `experiment.RQ1`
 
-Overall, FixWithInPaFer can reduce the debug-ging time by 25.3% and 28.0% on average, and increase thesuccess rate by 62.5% and 39.3% on average, compared to ManuallyFix and FixWithPatches, respectively.
+    `Run As`→`Run Configurations` →`Arguments` : set the following arguments as Program Arguments.
 
-| ![The Number of successfull debugging sessions.](./figure/number.png) | ![Debugging time.](./figure/time.png) |
-| :--------------------------------------: | :--------------------------------------: |
-| The Number of successfull debugging sessions. |              Debugging time.              |
+    * `-project` : the project name of buggy program of benchmark. (`-project=Math` for the example)
+    * `-start` : the bug id of start running project. (`-start=41` for the example)
+    * `-end` : the bug id of end running project. (`-end=41` for the example)
+
+    After running, you will obain eight files, recording the number of remaining patches after each filtering step under one filtering orders, respectively. For example, queryNumber_stra0.csv represents the results under random filtering order.
+
+* RQ5: Sensitivity analysis to attributes
+  * Run the Main class `experiment.RQ5`
+
+    `Run As`→`Run Configurations…` →`Arguments` : set the following arguments as Program Arguments.
+
+    * `-project` : the project name of buggy program of benchmark. (`-project=Math` for  example)
+    * `-start` : the bug id of start running project. (`-start=41` for  example)
+    * `-end` : the bug id of end running project. (`-end=41` for example)
+    * `-t` :  the un-configurable attribute. (three options: `-t=method`, `-t=variable` and `-t=trace`)
+
+    After running, you will obain one file, recording the number of remaining patches after each filtering step when configuring two attributes. For example, when setting `-t=method`, you will get queryNumber.csv which records the results when configuring variable and trace. 
+
+* RQ6: Sensitivity analysis to error rates
+	* Run the Main class `experiment.RQ6`
+
+    `Run As`→`Run Configurations…` →`Arguments` : set the following arguments as Program Arguments.
+
+    * `-project` : the project name of buggy program of benchmark. (`-project=Math` for  example)
+    * `-start` : the bug id of start running project. (`-start=41` for  example)
+    * `-end` : the bug id of end running project. (`-end=41` for example)
+
+    After running, you will obain five files, recording the results whether InPaFer can filter all incorrect patches and corresponding filtering steps under one error rate, respectively. The error rates range from 0.02 to 0.1. For example, bugNumber_0.02.csv" represents the results under 0.02 of error rate.
+
+#### Another running way
+  
+  This is a mvn project, so you can run using command line. 
+
+  * Build project: `mvn clean -U package`
+  * Run: cd target and run `java -jar interactive-patch-filter-1.1-SNAPSHOT-jar-with-dependencies.jar ` &&  the corresponding arguments.
+
+
+Notice that all results have been run tem times.
 
 
 ## V. Structure
 
 ```powershell
   |--- README.md   :  user guidance
-  |--- bin         :  binary code
   |--- d4j-info    :  defects4j information
-  |--- figure      :  some figures used in readme.md
-  |--- icon        :  icons used in plugin
   |--- lib         :  dependent libraries
   |--- FinalPatch  :  the patches used in experiment
   |--- src         :  source code

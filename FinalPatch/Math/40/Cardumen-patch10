@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2019-03-17 23:14:20.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java.patched	2019-03-17 23:14:20.000000000 +0800
+@@ -172,7 +172,7 @@
+             }
+         }
+         double x0 = 0;
+-        for (int j = end - 1; j >= start; --j) {
++ 		for (int j = ((DEFAULT_MAXIMAL_ORDER) + 1) / 2; j >= start; --j) {
+             x0 = (x[j]) + (x0 * (targetY - (y[j])));
+         }
+         return x0;

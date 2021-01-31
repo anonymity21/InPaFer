@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 13:15:36.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 13:15:37.000000000 +0800
+@@ -563,7 +563,7 @@
+         }
+         if (((dMin) < 0) || (((org.apache.commons.math.util.MathUtils.SAFE_MIN) * (qMax)) < (java.lang.Math.min(work[(l - 1)], java.lang.Math.min(work[(l - 9)], ((dMin2) + (work[(l - (2 * (pingPong)))]))))))) {
+             computeShiftIncrement(start, deflatedEnd, (end - deflatedEnd));
+-            for (boolean loop = true; loop;) {
++ 			for (boolean loop = ((TOLERANCE_2) < (-(lowerSpectra))) || ((TOLERANCE_2) > (lowerSpectra)); loop;) {
+                 dqds(start, deflatedEnd);
+                 if (((dMin) >= 0) && ((dMin1) > 0)) {
+                     updateSigma(tau);

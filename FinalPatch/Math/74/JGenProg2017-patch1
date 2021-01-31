@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2019-03-12 19:31:20.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java.patched	2019-03-12 19:31:20.000000000 +0800
+@@ -30,7 +30,7 @@
+         interpolator.reinitialize(stepStart, stepSize, scaled, nordsieck);
+         interpolator.storeTime(stepStart);
+         double hNew = stepSize;
+-        interpolator.rescale(hNew);
++        setMaxGrowth(10.0);
+         boolean lastStep = false;
+         while (!lastStep) {
+             interpolator.shift();

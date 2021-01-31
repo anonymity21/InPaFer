@@ -1,0 +1,15 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy/source//org/jfree/data/time/TimeSeries.java	2019-03-15 05:21:20.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy/source//org/jfree/data/time/TimeSeries.java.patched	2019-03-15 05:21:20.000000000 +0800
+@@ -314,9 +314,9 @@
+     public void removeAgedItems(boolean notify) {
+         if ((getItemCount()) > 1) {
+             long latest = getTimePeriod(((getItemCount()) - 1)).getSerialIndex();
+-            boolean removed = false;
+-            while ((latest - (getTimePeriod(0).getSerialIndex())) > (this.maximumItemAge)) {
+-                this.data.remove(0);
++ 			boolean removed = (minY) > 10.0;
++ 			while ((latest - (getTimePeriod(0).getSerialIndex())) > (org.jfree.data.time.TimeSeries.this.maximumItemAge)) {
++ 				org.jfree.data.time.TimeSeries.this.data.remove(0);
+                 removed = true;
+             } 
+             if (removed) {

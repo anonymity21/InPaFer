@@ -1,0 +1,18 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_55_buggy/src/com/google/javascript/jscomp/FunctionRewriter.java	2019-03-13 12:59:44.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_55_buggy/src/com/google/javascript/jscomp/FunctionRewriter.java.patched	2019-03-13 12:59:44.000000000 +0800
+@@ -24,6 +24,7 @@
+             for (com.google.javascript.jscomp.FunctionRewriter.Reduction reduction : reductions) {
+                 savings += reduction.estimateSavings();
+             }
++            if ((1 != (reductions.size())) && (!((reducers.size()) < (reductions.size())))) {
+             if (savings > (helperCodeCost + (com.google.javascript.jscomp.FunctionRewriter.SAVINGS_THRESHOLD))) {
+                 for (com.google.javascript.jscomp.FunctionRewriter.Reduction reduction : reductions) {
+                     reduction.apply();
+@@ -34,6 +35,7 @@
+             }
+         }
+     }
++    }
+     public com.google.javascript.rhino.Node parseHelperCode(com.google.javascript.jscomp.FunctionRewriter.Reducer reducer) {
+         com.google.javascript.rhino.Node root = compiler.parseSyntheticCode(((reducer.getClass().toString()) + ":helper"), reducer.getHelperSource());
+         return root != null ? root.removeFirstChild() : null;

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	2020-02-02 20:42:17.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java.patched	2020-02-02 20:42:17.000000000 +0800
+@@ -39,7 +39,7 @@
+         final double mu = getNumericalMean();
+         final double sigma = org.apache.commons.math3.util.FastMath.sqrt(getNumericalVariance());
+         final boolean chebyshevApplies = !(((((java.lang.Double.isInfinite(mu)) || (java.lang.Double.isNaN(mu))) || (java.lang.Double.isInfinite(sigma))) || (java.lang.Double.isNaN(sigma))) || (sigma == 0.0));
+-        if (chebyshevApplies) {
++        if (java.lang.Double.isNaN(p)) {
+             double k = org.apache.commons.math3.util.FastMath.sqrt(((1.0 - p) / p));
+             double tmp = mu - (k * sigma);
+             if (tmp > lower) {

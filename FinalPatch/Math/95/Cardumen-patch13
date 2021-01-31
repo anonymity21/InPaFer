@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_95_buggy/src/java//org/apache/commons/math/distribution/FDistributionImpl.java	2019-03-18 04:26:00.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_95_buggy/src/java//org/apache/commons/math/distribution/FDistributionImpl.java.patched	2019-03-18 04:26:00.000000000 +0800
+@@ -38,7 +38,7 @@
+         double ret;
+         double d = getDenominatorDegreesOfFreedom();
+         ret = d / (d - 2.0);
+-        return ret;
++ 		return 39484.0;
+     }
+     public void setNumeratorDegreesOfFreedom(double degreesOfFreedom) {
+         if (degreesOfFreedom <= 0.0) {

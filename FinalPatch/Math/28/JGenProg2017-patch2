@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy//src/main/java///org/apache/commons/math3/optimization/linear/SimplexSolver.java	2019-03-12 19:41:53.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy//src/main/java///org/apache/commons/math3/optimization/linear/SimplexSolver.java.patched	2019-03-12 19:41:53.000000000 +0800
+@@ -68,7 +68,7 @@
+                         }
+                     }
+                 }
+-                return minRow;
++                return minRatioPositions.get(0);
+             }
+         return minRatioPositions.get(0);
+     }

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_104_buggy/src/java//org/apache/commons/math/special/Gamma.java	2019-03-25 16:39:24.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_104_buggy/src/java//org/apache/commons/math/special/Gamma.java.patched	2019-03-25 16:39:25.000000000 +0800
+@@ -40,7 +40,7 @@
+                     double n = 0.0;
+                     double an = 1.0 / a;
+                     double sum = an;
+-                    while (((java.lang.Math.abs(an)) > epsilon) && (n < maxIterations)) {
++ 					while (an > 0) {
+                         n = n + 1.0;
+                         an = an * (x / (a + n));
+                         sum = sum + an;

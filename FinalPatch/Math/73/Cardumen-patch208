@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java	2019-03-18 09:38:11.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java.patched	2019-03-18 09:38:11.000000000 +0800
+@@ -33,7 +33,7 @@
+         if ((yInitial * yMin) < 0) {
+             return solve(f, min, yMin, initial, yInitial, min, yMin);
+         }
+-        double yMax = f.value(max);
++ 		double yMax = solve(f, defaultRelativeAccuracy, initial);
+         if ((java.lang.Math.abs(yMax)) <= (functionValueAccuracy)) {
+             setResult(yMax, 0);
+             return result;

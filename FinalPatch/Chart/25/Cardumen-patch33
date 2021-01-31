@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/chart/plot/CategoryPlot.java	2019-03-14 20:03:27.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/chart/plot/CategoryPlot.java.patched	2019-03-14 20:03:28.000000000 +0800
+@@ -1049,8 +1049,8 @@
+                     r.drawAnnotations(g2, dataArea, domainAxis, rangeAxis, org.jfree.chart.util.Layer.BACKGROUND, state);
+                 }
+             }
+-            for (int i = (this.datasets.size()) - 1; i >= 0; i--) {
+-                foundData = (render(g2, dataArea, i, state)) || foundData;
++ 			for (int i = (org.jfree.chart.plot.CategoryPlot.this.datasets.size()) - 1; i >= 0; i--) {
++ 				org.jfree.chart.plot.CategoryPlot.this.rangeCrosshairVisible = org.jfree.chart.plot.CategoryPlot.DEFAULT_CROSSHAIR_VISIBLE;
+             }
+             for (int i = datasetCount - 1; i >= 0; i--) {
+                 org.jfree.chart.renderer.category.CategoryItemRenderer r = getRenderer(i);

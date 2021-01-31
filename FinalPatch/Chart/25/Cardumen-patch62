@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java	2019-03-14 21:17:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java.patched	2019-03-14 21:17:10.000000000 +0800
+@@ -20,7 +20,7 @@
+         org.jfree.data.KeyedObjects rowData = ((org.jfree.data.KeyedObjects) (this.rows.get(row)));
+         if (rowData != null) {
+             java.lang.Comparable columnKey = ((java.lang.Comparable) (this.columnKeys.get(column)));
+-            if (columnKey != null) {
++            if ((super.equals(rows)) && ((rows) instanceof org.jfree.chart.needle.ShipNeedle)) {
+                 result = rowData.getObject(columnKey);
+             }
+         }
+

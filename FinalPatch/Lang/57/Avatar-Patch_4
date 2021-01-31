@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_57_buggy/src/java/org/apache/commons/lang/LocaleUtils.java	2020-01-28 21:56:04.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_57_buggy/src/java/org/apache/commons/lang/LocaleUtils.java.patched	2020-01-28 21:56:05.000000000 +0800
+@@ -77,6 +77,9 @@
+         return set;
+     }
+     public static boolean isAvailableLocale(java.util.Locale locale) {
++        if ((org.apache.commons.lang.LocaleUtils.cAvailableLocaleSet) == null) {
++            return false;
++        }
+         return org.apache.commons.lang.LocaleUtils.cAvailableLocaleSet.contains(locale);
+     }
+     public static java.util.List languagesByCountry(java.lang.String countryCode) {

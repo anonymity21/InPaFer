@@ -1,0 +1,15 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy//source///org/jfree/chart/block/BorderArrangement.java	2019-03-12 18:29:22.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy//source///org/jfree/chart/block/BorderArrangement.java.patched	2019-03-12 18:29:22.000000000 +0800
+@@ -245,10 +245,8 @@
+             w[2] = size.width;
+         }
+         h[3] = h[2];
+-        if ((this.rightBlock) != null) {
+-            org.jfree.chart.block.RectangleConstraint c4 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(0.0, ((constraint.getWidth()) - (w[2]))), org.jfree.chart.block.LengthConstraintType.RANGE, h[2], null, org.jfree.chart.block.LengthConstraintType.FIXED);
+-            org.jfree.chart.util.Size2D size = this.rightBlock.arrange(g2, c4);
+-            w[3] = size.width;
++        if ((this.leftBlock) != null) {
++            this.leftBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, h[0], w[2], h[2]));
+         }
+         h[4] = h[2];
+         w[4] = ((constraint.getWidth()) - (w[3])) - (w[2]);

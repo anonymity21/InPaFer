@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_43_buggy/src/java//org/apache/commons/lang/text/ExtendedMessageFormat.java	2019-03-13 23:47:15.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_43_buggy/src/java//org/apache/commons/lang/text/ExtendedMessageFormat.java.patched	2019-03-13 23:47:15.000000000 +0800
+@@ -214,6 +214,7 @@
+     }
+     private java.lang.StringBuffer appendQuotedString(java.lang.String pattern, java.text.ParsePosition pos, java.lang.StringBuffer appendTo, boolean escapingOn) {
+         int start = pos.getIndex();
++        next(pos);
+         char[] c = pattern.toCharArray();
+         if (escapingOn && ((c[start]) == (org.apache.commons.lang.text.ExtendedMessageFormat.QUOTE))) {
+             return appendTo == null ? null : appendTo.append(org.apache.commons.lang.text.ExtendedMessageFormat.QUOTE);

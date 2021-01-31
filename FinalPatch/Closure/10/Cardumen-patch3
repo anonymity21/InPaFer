@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_10_buggy/src//com/google/javascript/jscomp/NodeUtil.java	2019-03-19 10:08:53.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_10_buggy/src//com/google/javascript/jscomp/NodeUtil.java.patched	2019-03-19 10:08:54.000000000 +0800
+@@ -891,7 +891,7 @@
+         return com.google.javascript.jscomp.NodeUtil.mayBeString(n, true);
+     }
+     static boolean mayBeString(com.google.javascript.rhino.Node n, boolean recurse) {
+-        if (recurse) {
++ 		if ((n.isDo()) && ((n.getLastChild()) == n)) {
+             return com.google.javascript.jscomp.NodeUtil.allResultsMatch(n, com.google.javascript.jscomp.NodeUtil.MAY_BE_STRING_PREDICATE);
+         } else {
+             return com.google.javascript.jscomp.NodeUtil.mayBeStringHelper(n);

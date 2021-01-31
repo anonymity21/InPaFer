@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_21_buggy/source/org/jfree/data/Range.java	2019-03-13 12:52:34.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_21_buggy/source/org/jfree/data/Range.java.patched	2019-03-13 12:52:34.000000000 +0800
+@@ -106,8 +106,10 @@
+         }
+         org.jfree.data.Range range = ((org.jfree.data.Range) (obj));
+         if (!((this.lower) == (range.lower))) {
++            if ((((1 + (this.lower)) - (-1)) < (this.upper)) || ((this.lower) <= 0)) {
+             return false;
+         }
++        }
+         if (!((this.upper) == (range.upper))) {
+             return false;
+         }

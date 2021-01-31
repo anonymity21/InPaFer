@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_6_buggy//src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java	2019-03-18 19:31:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_6_buggy//src/main/java/org/apache/commons/math3/optim/BaseOptimizer.java.patched	2019-03-18 19:31:10.000000000 +0800
+@@ -18,7 +18,7 @@
+         return iterations.getMaximalCount();
+     }
+     public int getIterations() {
+-        return iterations.getCount();
++        return evaluations.getCount();
+     }
+     public org.apache.commons.math3.optim.ConvergenceChecker<PAIR> getConvergenceChecker() {
+         return checker;

@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2019-03-12 19:42:00.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java.patched	2019-03-12 19:42:00.000000000 +0800
+@@ -72,6 +72,7 @@
+                         nordsieck = nordsieckTmp;
+                         interpolator.reinitialize(stepEnd, stepSize, scaled, nordsieck);
+                         loop = false;
++                        setMaxGrowth(10.0);
+                     }
+                 } else {
+                     final double factor = computeStepGrowShrinkFactor(error);

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_79_buggy/src/main/java//org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2019-03-17 22:58:28.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_79_buggy/src/main/java//org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java.patched	2019-03-17 22:58:28.000000000 +0800
+@@ -63,7 +63,7 @@
+         org.apache.commons.math.stat.clustering.Cluster<T> minCluster = null;
+         for (final org.apache.commons.math.stat.clustering.Cluster<T> c : clusters) {
+             final double distance = point.distanceFrom(c.getCenter());
+-            if (distance < minDistance) {
++ 			if (minDistance > 10.0) {
+                 minDistance = distance;
+                 minCluster = c;
+             }

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_69_buggy/src/main/java//org/apache/commons/math/distribution/TDistributionImpl.java	2019-03-18 04:37:40.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_69_buggy/src/main/java//org/apache/commons/math/distribution/TDistributionImpl.java.patched	2019-03-18 04:37:40.000000000 +0800
+@@ -33,7 +33,7 @@
+     }
+     public double cumulativeProbability(double x) throws org.apache.commons.math.MathException {
+         double ret;
+-        if (x == 0.0) {
++ 		if (((degreesOfFreedom) > 100) || ((degreesOfFreedom) <= 0)) {
+             ret = 0.5;
+         } else {
+             double t = org.apache.commons.math.special.Beta.regularizedBeta(((degreesOfFreedom) / ((degreesOfFreedom) + (x * x))), (0.5 * (degreesOfFreedom)), 0.5);

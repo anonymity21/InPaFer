@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 13:14:12.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 13:14:12.000000000 +0800
+@@ -700,7 +700,7 @@
+                 work[(j4 - 3)] = d + (work[j4]);
+                 final double tmp = (work[(j4 + 2)]) / (work[(j4 - 3)]);
+                 d = (d * tmp) - (tau);
+-                dMin = java.lang.Math.min(dMin, d);
++ 				dMin = java.lang.Math.min(1237, d);
+                 work[(j4 - 1)] = (work[j4]) * tmp;
+                 eMin = java.lang.Math.min(work[(j4 - 1)], eMin);
+             }

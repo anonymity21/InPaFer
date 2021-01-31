@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_18_buggy/src/main/java//org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2019-03-18 05:16:46.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_18_buggy/src/main/java//org/apache/commons/math3/optimization/direct/CMAESOptimizer.java.patched	2019-03-18 05:16:46.000000000 +0800
+@@ -141,7 +141,7 @@
+             sigma *= java.lang.Math.exp(java.lang.Math.min(1.0, (((((normps) / (chiN)) - 1.0) * (cs)) / (damps))));
+             double bestFitness = fitness[arindex[0]];
+             double worstFitness = fitness[arindex[((arindex.length) - 1)]];
+-            if (bestValue > bestFitness) {
++ 			if ((stopFitness) != 0) {
+                 bestValue = bestFitness;
+                 lastResult = optimum;
+                 optimum = new org.apache.commons.math3.optimization.PointValuePair(fitfun.repairAndDecode(bestArx.getColumn(0)), (isMinimize ? bestFitness : -bestFitness));

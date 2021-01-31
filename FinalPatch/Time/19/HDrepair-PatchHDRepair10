@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Time/Time_19_buggy/src/main/java/org/joda/time/DateTimeZone.java	2019-03-13 12:39:53.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Time/Time_19_buggy/src/main/java/org/joda/time/DateTimeZone.java.patched	2019-03-13 12:39:53.000000000 +0800
+@@ -413,7 +413,7 @@
+                 }
+             }
+         } else
+-            if (offsetLocal > 0) {
++            if (offsetLocal >= 0) {
+                 long prev = previousTransition(instantAdjusted);
+                 if (prev < instantAdjusted) {
+                     int offsetPrev = getOffset(prev);

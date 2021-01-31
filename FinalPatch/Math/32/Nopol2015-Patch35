@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_32_buggy/src/main/java/org/apache/commons/math3/geometry/partitioning/AbstractRegion.java	2019-03-13 12:43:37.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_32_buggy/src/main/java/org/apache/commons/math3/geometry/partitioning/AbstractRegion.java.patched	2019-03-13 12:43:38.000000000 +0800
+@@ -84,6 +84,7 @@
+                 default :
+             }
+         } 
++        if (((!(((boundary.size()) - (plusList.size())) < (minusList.size()))) && (1 <= (plusList.size()))) || ((minusList.size()) == ((boundary.size()) + (-1))))
+         insertCuts(node.getPlus(), plusList);
+         insertCuts(node.getMinus(), minusList);
+     }

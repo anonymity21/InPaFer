@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2019-03-12 19:43:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java.patched	2019-03-12 19:43:10.000000000 +0800
+@@ -13,6 +13,7 @@
+         setEquations(equations);
+         resetEvaluations();
+         final boolean forward = t > t0;
++        setMaxGrowth(10.0);
+         if (y != y0) {
+             java.lang.System.arraycopy(y0, 0, y, 0, n);
+         }

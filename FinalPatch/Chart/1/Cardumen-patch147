@@ -1,0 +1,15 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_1_buggy/source//org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2019-03-14 17:32:46.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_1_buggy/source//org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java.patched	2019-03-14 17:32:47.000000000 +0800
+@@ -674,9 +674,9 @@
+         if ((this.plot) == null) {
+             return result;
+         }
+-        int index = this.plot.getIndexOf(this);
+-        org.jfree.data.category.CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++ 		int index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);
++ 		org.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);
++ 		if ((org.jfree.chart.renderer.AbstractRenderer.DEFAULT_SHAPE) instanceof org.jfree.chart.needle.MeterNeedle) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

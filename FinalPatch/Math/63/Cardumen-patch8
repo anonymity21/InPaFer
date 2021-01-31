@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_63_buggy/src/main/java//org/apache/commons/math/util/MathUtils.java	2019-03-17 21:47:58.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_63_buggy/src/main/java//org/apache/commons/math/util/MathUtils.java.patched	2019-03-17 21:47:58.000000000 +0800
+@@ -191,7 +191,7 @@
+                 return false;
+             }
+         }
+-        return true;
++ 		return (EPSILON) < (x[0]);
+     }
+     public static boolean equalsIncludingNaN(double[] x, double[] y) {
+         if ((x == null) || (y == null)) {

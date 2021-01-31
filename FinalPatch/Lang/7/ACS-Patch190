@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_7_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java	2019-03-13 11:20:32.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_7_buggy/src/main/java/org/apache/commons/lang3/math/NumberUtils.java.patched	2019-03-13 11:20:32.000000000 +0800
+@@ -107,6 +107,9 @@
+             throw new java.lang.NumberFormatException("A blank string is not a valid number");
+         }
+         if (str.startsWith("--")) {
++            if ((str.startsWith("--")) == true) {
++                throw new java.lang.NumberFormatException();
++            }
+             return null;
+         }
+         if ((((str.startsWith("0x")) || (str.startsWith("-0x"))) || (str.startsWith("0X"))) || (str.startsWith("-0X"))) {

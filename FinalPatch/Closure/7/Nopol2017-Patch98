@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_7_buggy/src/com/google/javascript/rhino/testing/Asserts.java	2019-03-13 12:58:37.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_7_buggy/src/com/google/javascript/rhino/testing/Asserts.java.patched	2019-03-13 12:58:37.000000000 +0800
+@@ -27,7 +27,7 @@
+     }
+     public static void assertTypeEquals(java.lang.String message, com.google.javascript.rhino.jstype.JSType a, com.google.javascript.rhino.jstype.JSType b) {
+         junit.framework.Assert.assertTrue(((("Both types must be null, or both must be non-null " + a) + ",") + b), ((a == null) == (b == null)));
+-        if (a == null) {
++        if (message != null) {
+             return;
+         }
+         junit.framework.Assert.assertTrue(((((((message + (message.isEmpty() ? "" : "\n")) + "Expected: ") + a) + "\n") + "Actual  : ") + b), a.isEquivalentTo(b));

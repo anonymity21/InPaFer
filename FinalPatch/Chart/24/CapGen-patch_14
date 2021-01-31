@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_24_buggy/source//org/jfree/chart/renderer/GrayPaintScale.java	2019-03-14 11:21:15.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_24_buggy/source//org/jfree/chart/renderer/GrayPaintScale.java.patched	2019-03-14 11:21:23.000000000 +0800
+@@ -21,7 +21,7 @@
+     public java.awt.Paint getPaint(double value) {
+         double v = java.lang.Math.max(value, this.lowerBound);
+         v = java.lang.Math.min(v, this.upperBound);
+-        int g = ((int) (((value - (this.lowerBound)) / ((this.upperBound) - (this.lowerBound))) * 255.0));
++        int g = ((int) (((v - (this.lowerBound)) / ((this.upperBound) - (this.lowerBound))) * 255.0));
+         return new java.awt.Color(g, g, g);
+     }
+     public boolean equals(java.lang.Object obj) {

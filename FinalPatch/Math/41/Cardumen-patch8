@@ -1,11 +1,11 @@
---- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java	2020-01-01 16:38:00.000000000 +0800
-+++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java.patched	2020-01-01 17:22:37.000000000 +0800
-@@ -504,7 +504,7 @@
-         double var = Double.NaN;
- 
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-03-17 22:49:33.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java.patched	2019-03-17 22:49:34.000000000 +0800
+@@ -125,7 +125,7 @@
+     public double evaluate(final double[] values, final double[] weights, final double mean, final int begin, final int length) {
+         double var = java.lang.Double.NaN;
          if (test(values, weights, begin, length)) {
 -            if (length == 1) {
-+            if (length <= 6) {
++ 			if (length <= 6) {
                  var = 0.0;
-             } else if (length > 1) {
-                 double accum = 0.0;
+             } else
+                 if (length > 1) {

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java	2019-03-18 09:35:27.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java.patched	2019-03-18 09:35:27.000000000 +0800
+@@ -18,7 +18,7 @@
+         return solve(f, min, max, initial);
+     }
+     public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, final double min, final double max, final double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+-        clearResult();
++ 		verifySequence(functionValue, min, result);
+         verifySequence(min, initial, max);
+         double yInitial = f.value(initial);
+         if ((java.lang.Math.abs(yInitial)) <= (functionValueAccuracy)) {

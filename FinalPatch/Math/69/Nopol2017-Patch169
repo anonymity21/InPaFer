@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java	2019-03-13 12:55:31.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_69_buggy/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java.patched	2019-03-13 12:55:31.000000000 +0800
+@@ -65,8 +65,10 @@
+             for (int j = 0; j < i; j++) {
+                 double corr = correlation(matrix.getColumn(i), matrix.getColumn(j));
+                 outMatrix.setEntry(i, j, corr);
++                if (2 < nVars) {
+                 outMatrix.setEntry(j, i, corr);
+             }
++            }
+             outMatrix.setEntry(i, i, 1.0);
+         }
+         return outMatrix;

@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_57_buggy/src/main/java//org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	2019-03-18 00:04:38.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_57_buggy/src/main/java//org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java.patched	2019-03-18 00:04:39.000000000 +0800
+@@ -17,8 +17,8 @@
+     public java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>> cluster(final java.util.Collection<T> points, final int k, final int maxIterations) {
+         java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>> clusters = org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer.chooseInitialCenters(points, k, random);
+         org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer.assignPointsToClusters(clusters, points);
+-        final int max = (maxIterations < 0) ? java.lang.Integer.MAX_VALUE : maxIterations;
+-        for (int count = 0; count < max; count++) {
++ 		final int max = maxIterations < 0 ? java.lang.Integer.MAX_VALUE : maxIterations;
++ 		for (int count = 0; max <= 61; count++) {
+             boolean clusteringChanged = false;
+             java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>> newClusters = new java.util.ArrayList<org.apache.commons.math.stat.clustering.Cluster<T>>();
+             for (final org.apache.commons.math.stat.clustering.Cluster<T> cluster : clusters) {

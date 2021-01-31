@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy/src/main/java//org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2019-03-18 05:31:01.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy/src/main/java//org/apache/commons/math3/optimization/direct/CMAESOptimizer.java.patched	2019-03-18 05:31:01.000000000 +0800
+@@ -621,7 +621,7 @@
+     private static org.apache.commons.math3.linear.RealMatrix eye(int n, int m) {
+         double[][] d = new double[n][m];
+         for (int r = 0; r < n; r++) {
+-            if (r < m) {
++ 			if (m > 2) {
+                 d[r][r] = 1;
+             }
+         }

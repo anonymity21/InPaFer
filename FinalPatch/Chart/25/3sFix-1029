@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	2020-02-02 20:32:29.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java.patched	2020-02-02 20:32:29.000000000 +0800
+@@ -18,7 +18,7 @@
+         if (masd != null) {
+             result = masd.getMean();
+         }
+-        return result;
++        return null;
+     }
+     public java.lang.Number getValue(int row, int column) {
+         return getMeanValue(row, column);

@@ -1,0 +1,16 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_5_buggy/source//org/jfree/data/xy/XYSeries.java	2019-03-15 05:03:37.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_5_buggy/source//org/jfree/data/xy/XYSeries.java.patched	2019-03-15 05:03:37.000000000 +0800
+@@ -166,10 +166,10 @@
+             }
+             existing.setY(y);
+         } else {
+-            if (this.autoSort) {
+-                this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
++ 			if ((data) instanceof org.jfree.chart.needle.LongNeedle) {
++ 				org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
+             } else {
+-                this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
++ 				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+             }
+             if ((getItemCount()) > (this.maximumItemCount)) {
+                 this.data.remove(0);

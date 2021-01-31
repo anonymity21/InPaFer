@@ -1,0 +1,18 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_84_buggy/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java	2020-01-29 00:05:41.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_84_buggy/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java.patched	2020-01-29 00:05:41.000000000 +0800
+@@ -12,7 +12,6 @@
+     }
+     @java.lang.Override
+     protected void iterateSimplex(final java.util.Comparator<org.apache.commons.math.optimization.RealPointValuePair> comparator) throws java.lang.IllegalArgumentException, org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.optimization.OptimizationException {
+-        while (true) {
+             incrementIterationsCounter();
+             final org.apache.commons.math.optimization.RealPointValuePair[] original = simplex;
+             final org.apache.commons.math.optimization.RealPointValuePair best = original[0];
+@@ -30,7 +29,6 @@
+                 return;
+             }
+         } 
+-    }
+     private org.apache.commons.math.optimization.RealPointValuePair evaluateNewSimplex(final org.apache.commons.math.optimization.RealPointValuePair[] original, final double coeff, final java.util.Comparator<org.apache.commons.math.optimization.RealPointValuePair> comparator) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.optimization.OptimizationException {
+         final double[] xSmallest = original[0].getPointRef();
+         final int n = xSmallest.length;

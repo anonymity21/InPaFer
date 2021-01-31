@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_27_buggy/src/main/java//org/apache/commons/lang3/math/NumberUtils.java	2019-03-18 16:49:56.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_27_buggy/src/main/java//org/apache/commons/lang3/math/NumberUtils.java.patched	2019-03-18 16:49:56.000000000 +0800
+@@ -129,7 +129,7 @@
+             }
+             mant = str.substring(0, decPos);
+         } else {
+-            if (expPos > (-1)) {
++ 			if ((decPos + decPos) > expPos) {
+                 mant = str.substring(0, expPos);
+             } else {
+                 mant = str;

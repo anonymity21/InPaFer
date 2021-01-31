@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy//src/main/java///org/apache/commons/math/util/OpenIntToDoubleHashMap.java	2019-03-12 19:42:30.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy//src/main/java///org/apache/commons/math/util/OpenIntToDoubleHashMap.java.patched	2019-03-12 19:42:30.000000000 +0800
+@@ -158,6 +158,7 @@
+     public double remove(final int key) {
+         final int hash = org.apache.commons.math.util.OpenIntToDoubleHashMap.hashOf(key);
+         int index = hash & (mask);
++        states[index] = org.apache.commons.math.util.OpenIntToDoubleHashMap.REMOVED;
+         if (containsKey(key, index)) {
+             return doRemove(index);
+         }

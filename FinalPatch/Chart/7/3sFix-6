@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_7_buggy/source/org/jfree/data/time/TimePeriodValues.java	2020-02-02 20:28:35.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_7_buggy/source/org/jfree/data/time/TimePeriodValues.java.patched	2020-02-02 20:28:35.000000000 +0800
+@@ -217,7 +217,7 @@
+         return this.minMiddleIndex;
+     }
+     public int getMaxMiddleIndex() {
+-        return this.maxMiddleIndex;
++        return this.maxStartIndex;
+     }
+     public int getMinEndIndex() {
+         return this.minEndIndex;

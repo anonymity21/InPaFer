@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy/source//org/jfree/chart/block/BorderArrangement.java	2019-03-15 00:16:29.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy/source//org/jfree/chart/block/BorderArrangement.java.patched	2019-03-15 00:16:29.000000000 +0800
+@@ -163,7 +163,7 @@
+             h[4] = size.height;
+         }
+         double height = ((h[0]) + (h[1])) + (java.lang.Math.max(h[2], java.lang.Math.max(h[3], h[4])));
+-        return arrange(container, g2, new org.jfree.chart.block.RectangleConstraint(width, height));
++ 		return new org.jfree.chart.util.Size2D(width, height);
+     }
+     protected org.jfree.chart.util.Size2D arrangeRR(org.jfree.chart.block.BlockContainer container, org.jfree.data.Range widthRange, org.jfree.data.Range heightRange, java.awt.Graphics2D g2) {
+         double[] w = new double[5];

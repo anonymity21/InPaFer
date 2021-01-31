@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2020-02-02 20:49:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java.patched	2020-02-02 20:49:10.000000000 +0800
+@@ -414,7 +414,7 @@
+             entries.put(index, value);
+         } else
+             if (entries.containsKey(index)) {
+-                entries.remove(index);
++                entries.put(index, value);
+             }
+     }
+     @java.lang.Override

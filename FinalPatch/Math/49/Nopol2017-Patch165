@@ -1,0 +1,14 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java	2019-03-13 12:54:31.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java/org/apache/commons/math/linear/OpenMapRealVector.java.patched	2019-03-13 12:54:32.000000000 +0800
+@@ -414,9 +414,11 @@
+             entries.put(index, value);
+         } else
+             if (entries.containsKey(index)) {
++                if ((org.apache.commons.math.linear.OpenMapRealVector.DEFAULT_ZERO_TOLERANCE) == (this.epsilon)) {
+                 entries.remove(index);
+             }
+     }
++    }
+     @java.lang.Override
+     public void setSubVector(int index, org.apache.commons.math.linear.RealVector v) {
+         checkIndex(index);

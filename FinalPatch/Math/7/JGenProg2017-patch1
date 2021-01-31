@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_7_buggy//src/main/java//org/apache/commons/math3/ode/AbstractIntegrator.java	2019-03-12 19:32:00.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_7_buggy//src/main/java//org/apache/commons/math3/ode/AbstractIntegrator.java.patched	2019-03-12 19:32:00.000000000 +0800
+@@ -28,6 +28,7 @@
+         return name;
+     }
+     public void addStepHandler(final org.apache.commons.math3.ode.sampling.StepHandler handler) {
++        eventsStates = new java.util.ArrayList<org.apache.commons.math3.ode.events.EventState>();
+         stepHandlers.add(handler);
+     }
+     public java.util.Collection<org.apache.commons.math3.ode.sampling.StepHandler> getStepHandlers() {

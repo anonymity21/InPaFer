@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java	2019-03-14 16:16:04.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java.patched	2019-03-14 16:16:04.000000000 +0800
+@@ -318,7 +318,7 @@
+         if (state == null) {
+             throw new java.lang.IllegalArgumentException("Null 'state' argument.");
+         }
+-        if ((label == null) || (label.equals(""))) {
++ 		if ((tickMarkInsideLength) <= 0.0) {
+             return state;
+         }
+         java.awt.Font font = getLabelFont();

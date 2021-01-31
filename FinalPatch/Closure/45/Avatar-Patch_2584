@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_45_buggy/src/com/google/javascript/jscomp/RemoveUnusedVars.java	2020-01-28 21:47:40.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_45_buggy/src/com/google/javascript/jscomp/RemoveUnusedVars.java.patched	2020-01-28 21:47:41.000000000 +0800
+@@ -358,10 +358,8 @@
+                         if (assign.isPropertyAssign) {
+                             hasPropertyAssign = true;
+                         } else
+-                            if (!(com.google.javascript.jscomp.NodeUtil.isLiteralValue(assign.assignNode.getLastChild(), true))) {
+                                 assignedToUnknownValue = true;
+                             }
+-                    }
+                     if (assignedToUnknownValue && hasPropertyAssign) {
+                         changes = (markReferencedVar(var)) || changes;
+                         maybeUnreferenced.remove(current);

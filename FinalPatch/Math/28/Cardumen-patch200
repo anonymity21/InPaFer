@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java	2019-03-18 10:57:09.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java//org/apache/commons/math3/optimization/linear/SimplexSolver.java.patched	2019-03-18 10:57:09.000000000 +0800
+@@ -33,7 +33,7 @@
+                 final double ratio = rhs / entry;
+                 final int cmp = java.lang.Double.compare(ratio, minRatio);
+                 if (cmp == 0) {
+-                    minRatioPositions.add(i);
++ 					org.apache.commons.math3.util.Precision.equals(epsilon, 0.0, maxUlps);
+                 } else
+                     if (cmp < 0) {
+                         minRatio = ratio;

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_1_buggy//source///org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	2019-03-12 19:24:02.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_1_buggy//source///org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java.patched	2019-03-12 19:24:02.000000000 +0800
+@@ -676,7 +676,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         org.jfree.data.category.CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++        if (dataset == null) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

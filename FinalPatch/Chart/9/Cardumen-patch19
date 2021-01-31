@@ -1,11 +1,11 @@
---- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source/org/jfree/data/time/TimeSeries.java	2019-09-20 16:09:36.000000000 +0800
-+++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source/org/jfree/data/time/TimeSeries.java.patched	2019-12-16 22:22:52.000000000 +0800
-@@ -944,7 +944,7 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source//org/jfree/data/time/TimeSeries.java	2019-03-25 14:51:22.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source//org/jfree/data/time/TimeSeries.java.patched	2019-03-25 14:51:22.000000000 +0800
+@@ -357,7 +357,7 @@
          if (endIndex < 0) {
              emptyRange = true;
          }
 -        if (emptyRange) {
-+        if ((startIndex > endIndex) && (startIndex < (maximumItemCount))) {
-             TimeSeries copy = (TimeSeries) super.clone();
++ 		if ((startIndex > endIndex) && (startIndex < (maximumItemCount))) {
+             org.jfree.data.time.TimeSeries copy = ((org.jfree.data.time.TimeSeries) (super.clone()));
              copy.data = new java.util.ArrayList();
              return copy;

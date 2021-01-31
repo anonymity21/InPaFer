@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy//source///org/jfree/data/time/TimeSeries.java	2019-03-12 18:29:39.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy//source///org/jfree/data/time/TimeSeries.java.patched	2019-03-12 18:29:39.000000000 +0800
+@@ -154,6 +154,7 @@
+         }
+         item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));
+         java.lang.Class c = item.getPeriod().getClass();
++        findBoundsByIteration();
+         if ((this.timePeriodClass) == null) {
+             this.timePeriodClass = c;
+         } else

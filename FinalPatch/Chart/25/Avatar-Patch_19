@@ -1,0 +1,15 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2020-01-28 21:22:27.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java.patched	2020-01-28 21:22:28.000000000 +0800
+@@ -28,12 +28,6 @@
+         }
+         org.jfree.data.statistics.StatisticalCategoryDataset statData = ((org.jfree.data.statistics.StatisticalCategoryDataset) (data));
+         org.jfree.chart.plot.PlotOrientation orientation = plot.getOrientation();
+-        if (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {
+-            drawHorizontalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, statData, row, column);
+-        } else
+-            if (orientation == (org.jfree.chart.plot.PlotOrientation.VERTICAL)) {
+-                drawVerticalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, statData, row, column);
+-            }
+     }
+     protected void drawHorizontalItem(java.awt.Graphics2D g2, org.jfree.chart.renderer.category.CategoryItemRendererState state, java.awt.geom.Rectangle2D dataArea, org.jfree.chart.plot.CategoryPlot plot, org.jfree.chart.axis.CategoryAxis domainAxis, org.jfree.chart.axis.ValueAxis rangeAxis, org.jfree.data.statistics.StatisticalCategoryDataset dataset, int row, int column) {
+         org.jfree.chart.util.RectangleEdge xAxisLocation = plot.getDomainAxisEdge();

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_32_buggy/src/main/java//org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java	2019-03-18 04:31:32.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_32_buggy/src/main/java//org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java.patched	2019-03-18 04:31:33.000000000 +0800
+@@ -120,7 +120,7 @@
+             return new org.apache.commons.math3.geometry.euclidean.threed.Vector3D(0, (inverse * (z)), ((-inverse) * (y)));
+         } else
+             if (((y) >= (-threshold)) && ((y) <= threshold)) {
+-                double inverse = 1 / (org.apache.commons.math3.util.FastMath.sqrt((((x) * (x)) + ((z) * (z)))));
++ 				double inverse = (x) * (x);
+                 return new org.apache.commons.math3.geometry.euclidean.threed.Vector3D(((-inverse) * (z)), 0, (inverse * (x)));
+             }
+         double inverse = 1 / (org.apache.commons.math3.util.FastMath.sqrt((((x) * (x)) + ((y) * (y)))));

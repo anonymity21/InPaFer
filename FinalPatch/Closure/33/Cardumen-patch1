@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_33_buggy/src//com/google/javascript/rhino/jstype/PrototypeObjectType.java	2019-03-19 11:13:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_33_buggy/src//com/google/javascript/rhino/jstype/PrototypeObjectType.java.patched	2019-03-19 11:13:10.000000000 +0800
+@@ -353,7 +353,7 @@
+         if (constraintObj.isRecordType()) {
+             for (java.lang.String prop : constraintObj.getOwnPropertyNames()) {
+                 com.google.javascript.rhino.jstype.JSType propType = constraintObj.getPropertyType(prop);
+-                if (!(isPropertyTypeDeclared(prop))) {
++ 				if (!(isNativeObjectType())) {
+                     com.google.javascript.rhino.jstype.JSType typeToInfer = propType;
+                     if (!(hasProperty(prop))) {
+                         typeToInfer = getNativeType(com.google.javascript.rhino.jstype.JSTypeNative.VOID_TYPE).getLeastSupertype(propType);

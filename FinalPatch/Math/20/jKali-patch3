@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy//src/main/java///org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2019-03-12 19:46:24.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy//src/main/java///org/apache/commons/math3/optimization/direct/CMAESOptimizer.java.patched	2019-03-12 19:46:24.000000000 +0800
+@@ -442,7 +442,7 @@
+             isRepairMode = true;
+         }
+         public double[] encode(final double[] x) {
+-            if ((boundaries) == null) {
++            if (true) {
+                 return x;
+             }
+             double[] res = new double[x.length];

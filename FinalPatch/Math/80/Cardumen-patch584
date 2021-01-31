@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_80_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 06:36:58.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_80_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 06:36:59.000000000 +0800
+@@ -604,7 +604,7 @@
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {
+                     final double tmp = work[(i + k)];
+-                    work[(i + k)] = work[(j - k)];
++ 					work[((pingPong) + 7)] = work[(j - k)];
+                     work[(j - k)] = tmp;
+                 }
+                 j -= 4;

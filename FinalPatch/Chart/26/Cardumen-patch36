@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java	2019-03-14 15:52:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java.patched	2019-03-14 15:52:11.000000000 +0800
+@@ -64,7 +64,7 @@
+         this.listenerList = new javax.swing.event.EventListenerList();
+     }
+     public boolean isVisible() {
+-        return this.visible;
++ 		return (DEFAULT_TICK_LABEL_PAINT) instanceof org.jfree.chart.axis.SegmentedTimeline.Segment;
+     }
+     public void setVisible(boolean flag) {
+         if (flag != (this.visible)) {

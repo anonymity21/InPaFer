@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_115_buggy//src/com/google/javascript/jscomp/FunctionInjector.java	2019-03-18 19:29:03.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_115_buggy//src/com/google/javascript/jscomp/FunctionInjector.java.patched	2019-03-18 19:29:04.000000000 +0800
+@@ -337,7 +337,7 @@
+         while ((cArg != null) || (fnParam != null)) {
+             if (fnParam != null) {
+                 if (cArg != null) {
+-                    if (hasSideEffects && (com.google.javascript.jscomp.NodeUtil.canBeSideEffected(cArg))) {
++                    if ((cArg == null) && (com.google.javascript.jscomp.NodeUtil.canBeSideEffected(cArg))) {
+                         return com.google.javascript.jscomp.FunctionInjector.CanInlineResult.NO;
+                     }
+                     if ((com.google.javascript.jscomp.NodeUtil.mayEffectMutableState(cArg, compiler)) && ((com.google.javascript.jscomp.NodeUtil.getNameReferenceCount(block, fnParam.getString())) > 1)) {

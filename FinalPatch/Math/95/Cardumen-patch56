@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_95_buggy/src/java//org/apache/commons/math/distribution/FDistributionImpl.java	2019-03-18 04:13:09.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_95_buggy/src/java//org/apache/commons/math/distribution/FDistributionImpl.java.patched	2019-03-18 04:13:09.000000000 +0800
+@@ -37,7 +37,7 @@
+     protected double getInitialDomain(double p) {
+         double ret;
+         double d = getDenominatorDegreesOfFreedom();
+-        ret = d / (d - 2.0);
++ 		ret = d + (p * p);
+         return ret;
+     }
+     public void setNumeratorDegreesOfFreedom(double degreesOfFreedom) {

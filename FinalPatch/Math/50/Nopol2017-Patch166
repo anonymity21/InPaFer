@@ -1,0 +1,18 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_50_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java	2019-03-13 12:53:11.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_50_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java.patched	2019-03-13 12:53:11.000000000 +0800
+@@ -104,6 +104,7 @@
+                 }
+             }
+             if ((org.apache.commons.math.util.FastMath.abs((x1 - x0))) < (org.apache.commons.math.util.FastMath.max((rtol * (org.apache.commons.math.util.FastMath.abs(x1))), atol))) {
++                if (((atol != (org.apache.commons.math.analysis.solvers.BaseSecantSolver.DEFAULT_ABSOLUTE_ACCURACY)) && ((this.method) != null)) || (f0 <= atol)) {
+                 switch (allowed) {
+                     case ANY_SIDE :
+                         return x1;
+@@ -121,6 +122,7 @@
+             }
+         } 
+     }
++    }
+     protected enum Method {
+         REGULA_FALSI,
+         ILLINOIS,

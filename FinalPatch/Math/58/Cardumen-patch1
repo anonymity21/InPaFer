@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_58_buggy/src/main/java//org/apache/commons/math/analysis/function/Gaussian.java	2019-03-18 04:37:30.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_58_buggy/src/main/java//org/apache/commons/math/analysis/function/Gaussian.java.patched	2019-03-18 04:37:30.000000000 +0800
+@@ -58,7 +58,7 @@
+             if ((param.length) != 3) {
+                 throw new org.apache.commons.math.exception.DimensionMismatchException(param.length, 3);
+             }
+-            if ((param[2]) <= 0) {
++ 			if ((param[0]) <= 0) {
+                 throw new org.apache.commons.math.exception.NotStrictlyPositiveException(param[2]);
+             }
+         }

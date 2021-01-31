@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy/src/main/java//org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2019-03-18 05:39:05.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy/src/main/java//org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java.patched	2019-03-18 05:39:05.000000000 +0800
+@@ -85,7 +85,7 @@
+             manager.stepAccepted(nextStep, y);
+             lastStep = manager.stop();
+             for (org.apache.commons.math.ode.sampling.StepHandler handler : stepHandlers) {
+-                interpolator.setInterpolatedTime(nextStep);
++ 				setMaxGrowth(10.0);
+                 handler.handleStep(interpolator, lastStep);
+             }
+             stepStart = nextStep;

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy//src/main/java///org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2019-03-12 19:30:06.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy//src/main/java///org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java.patched	2019-03-12 19:30:07.000000000 +0800
+@@ -115,7 +115,7 @@
+                     if ((signChangeIndex - start) >= (end - signChangeIndex)) {
+                         ++start;
+                     } else {
+-                        --end;
++                        signChangeIndex++;
+                     }
+                     nextX = java.lang.Double.NaN;
+                 }

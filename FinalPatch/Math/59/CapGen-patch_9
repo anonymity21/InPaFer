@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_59_buggy/src/main/java//org/apache/commons/math/util/FastMath.java	2019-03-13 23:46:05.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_59_buggy/src/main/java//org/apache/commons/math/util/FastMath.java.patched	2019-03-13 23:46:06.000000000 +0800
+@@ -1962,7 +1962,7 @@
+         return a <= b ? b : a;
+     }
+     public static float max(final float a, final float b) {
+-        return a <= b ? b : java.lang.Float.isNaN((a + b)) ? java.lang.Float.NaN : b;
++        return a <= b ? b : java.lang.Float.isNaN((a + b)) ? java.lang.Float.NaN : a;
+     }
+     public static double max(final double a, final double b) {
+         return a <= b ? b : java.lang.Double.isNaN((a + b)) ? java.lang.Double.NaN : a;

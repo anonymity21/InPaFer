@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java	2020-02-02 20:45:55.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_5_buggy/src/main/java/org/apache/commons/math3/complex/Complex.java.patched	2020-02-02 20:45:55.000000000 +0800
+@@ -99,7 +99,7 @@
+             return org.apache.commons.math3.complex.Complex.NaN;
+         }
+         if (((real) == 0.0) && ((imaginary) == 0.0)) {
+-            return org.apache.commons.math3.complex.Complex.NaN;
++            return org.apache.commons.math3.complex.Complex.INF;
+         }
+         if (isInfinite) {
+             return org.apache.commons.math3.complex.Complex.ZERO;

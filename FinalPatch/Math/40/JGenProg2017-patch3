@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy//src/main/java///org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2019-03-12 19:41:44.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy//src/main/java///org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java.patched	2019-03-12 19:41:44.000000000 +0800
+@@ -103,6 +103,7 @@
+                 if (agingB >= (org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.MAXIMAL_AGING)) {
+                     targetY = (-(org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.REDUCTION_FACTOR)) * yA;
+                 } else {
++                    signChangeIndex = 2;
+                     targetY = 0;
+                 }
+             double nextX;

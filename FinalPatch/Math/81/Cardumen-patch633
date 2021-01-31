@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 11:53:31.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 11:53:31.000000000 +0800
+@@ -870,7 +870,7 @@
+                             b2 = (work[(nn - 9)]) / (work[(nn - 11)]);
+                             np = nn - 13;
+                         }
+-                        a2 = a2 + b2;
++ 						a2 = (sigma) + (work[(4 * (pingPong))]);
+                         for (int i4 = np; i4 >= (((4 * start) + 2) + (pingPong)); i4 -= 4) {
+                             if (b2 == 0.0) {
+                                 break;

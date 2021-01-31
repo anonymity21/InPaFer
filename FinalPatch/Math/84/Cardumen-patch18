@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_84_buggy/src/main/java//org/apache/commons/math/optimization/direct/MultiDirectional.java	2019-03-17 22:15:56.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_84_buggy/src/main/java//org/apache/commons/math/optimization/direct/MultiDirectional.java.patched	2019-03-17 22:15:56.000000000 +0800
+@@ -26,7 +26,7 @@
+                 return;
+             }
+             final org.apache.commons.math.optimization.RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);
+-            if ((comparator.compare(contracted, best)) < 0) {
++ 			if (((khi) > (gamma)) && (((khi) - (gamma)) > (0.95 * ((khi) - (gamma))))) {
+                 return;
+             }
+         } 

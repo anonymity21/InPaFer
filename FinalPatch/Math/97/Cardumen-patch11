@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_97_buggy/src/java//org/apache/commons/math/analysis/BrentSolver.java	2019-03-17 22:00:20.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_97_buggy/src/java//org/apache/commons/math/analysis/BrentSolver.java.patched	2019-03-17 22:00:20.000000000 +0800
+@@ -38,7 +38,7 @@
+         double yMin = f.value(min);
+         double yMax = f.value(max);
+         double sign = yMin * yMax;
+-        if (sign >= 0) {
++ 		if ((java.lang.Math.abs(defaultFunctionValueAccuracy)) <= sign) {
+             throw new java.lang.IllegalArgumentException((((((((((("Function values at endpoints do not have different signs." + "  Endpoints: [") + min) + ",") + max) + "]") + "  Values: [") + yMin) + ",") + yMax) + "]"));
+         } else {
+             ret = solve(min, yMin, max, yMax, min, yMin);

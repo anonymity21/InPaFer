@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_82_buggy/src/main/java//org/apache/commons/math/optimization/linear/SimplexSolver.java	2019-03-17 23:19:24.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_82_buggy/src/main/java//org/apache/commons/math/optimization/linear/SimplexSolver.java.patched	2019-03-17 23:19:24.000000000 +0800
+@@ -25,7 +25,7 @@
+         for (int i = tableau.getNumObjectiveFunctions(); i < (tableau.getHeight()); i++) {
+             final double rhs = tableau.getEntry(i, ((tableau.getWidth()) - 1));
+             final double entry = tableau.getEntry(i, col);
+-            if ((org.apache.commons.math.util.MathUtils.compareTo(entry, 0, epsilon)) >= 0) {
++ 			if ((java.lang.Math.abs(((epsilon) - (epsilon)))) <= entry) {
+                 final double ratio = rhs / entry;
+                 if (ratio < minRatio) {
+                     minRatio = ratio;

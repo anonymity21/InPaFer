@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_126_buggy/src/com/google/javascript/jscomp/MinimizeExitPoints.java	2020-02-02 20:40:11.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_126_buggy/src/com/google/javascript/jscomp/MinimizeExitPoints.java.patched	2020-02-02 20:40:11.000000000 +0800
+@@ -57,7 +57,7 @@
+             }
+             if (com.google.javascript.jscomp.NodeUtil.hasFinally(n)) {
+                 com.google.javascript.rhino.Node finallyBlock = n.getLastChild();
+-                tryMinimizeExits(finallyBlock, exitType, labelName);
++                tryMinimizeExits(n.getFirstChild(), com.google.javascript.rhino.Token.BREAK, null);
+             }
+         }
+         if (n.isLabel()) {

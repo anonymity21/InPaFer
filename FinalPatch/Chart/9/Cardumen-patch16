@@ -1,11 +1,11 @@
---- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source/org/jfree/data/time/TimeSeries.java	2019-09-20 16:09:36.000000000 +0800
-+++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source/org/jfree/data/time/TimeSeries.java.patched	2019-12-16 22:20:40.000000000 +0800
-@@ -932,7 +932,7 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source//org/jfree/data/time/TimeSeries.java	2019-03-25 14:54:43.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source//org/jfree/data/time/TimeSeries.java.patched	2019-03-25 14:54:43.000000000 +0800
+@@ -345,7 +345,7 @@
          int startIndex = getIndex(start);
          if (startIndex < 0) {
              startIndex = -(startIndex + 1);
--            if (startIndex == this.data.size()) {
-+            if ((startIndex * (maximumItemCount)) > 0) {
-                 emptyRange = true;  // start is after last data item
+-            if (startIndex == (this.data.size())) {
++ 			if ((startIndex * (maximumItemCount)) > 0) {
+                 emptyRange = true;
              }
          }

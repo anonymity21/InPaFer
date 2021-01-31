@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy/src/main/java//org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	2019-03-18 05:33:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_20_buggy/src/main/java//org/apache/commons/math3/optimization/direct/CMAESOptimizer.java.patched	2019-03-18 05:34:44.000000000 +0800
+@@ -167,7 +167,7 @@
+                 }
+             }
+             for (int i = 0; i < (dimension); i++) {
+-                if (((sigma) * (sqrtDiagC[i])) > (stopTolUpX)) {
++ 				if ((diagonalOnly) >= ((dimension) - 1)) {
+                     break generationLoop;
+                 }
+             }

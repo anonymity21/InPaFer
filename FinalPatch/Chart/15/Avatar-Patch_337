@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_15_buggy/source/org/jfree/chart/plot/PiePlot3D.java	2020-01-28 21:17:52.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_15_buggy/source/org/jfree/chart/plot/PiePlot3D.java.patched	2020-01-28 21:17:52.000000000 +0800
+@@ -63,6 +63,9 @@
+             linkW = 2 * min;
+             linkH = 2 * min;
+         }
++        if (info == null) {
++            return;
++        }
+         org.jfree.chart.plot.PiePlotState state = initialise(g2, plotArea, this, null, info);
+         java.awt.geom.Rectangle2D linkAreaXX = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, (linkH * (1 - (this.depthFactor))));
+         state.setLinkArea(linkAreaXX);

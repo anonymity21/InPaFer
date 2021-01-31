@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_58_buggy//src/java/org/apache/commons/lang/math/NumberUtils.java	2019-03-18 19:30:20.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_58_buggy//src/java/org/apache/commons/lang/math/NumberUtils.java.patched	2019-03-18 19:30:20.000000000 +0800
+@@ -127,7 +127,7 @@
+             switch (lastChar) {
+                 case 'l' :
+                 case 'L' :
+-                    if ((((dec == null) && (exp == null)) && (org.apache.commons.lang.math.NumberUtils.isDigits(numeric.substring(1)))) && (((numeric.charAt(0)) == '-') || (java.lang.Character.isDigit(numeric.charAt(0))))) {
++                    if (((dec == null) && (exp == null)) && ((((numeric.charAt(0)) == '-') && (org.apache.commons.lang.math.NumberUtils.isDigits(numeric.substring(1)))) || (org.apache.commons.lang.math.NumberUtils.isDigits(numeric)))) {
+                         try {
+                             return org.apache.commons.lang.math.NumberUtils.createLong(numeric);
+                         } catch (java.lang.NumberFormatException nfe) {

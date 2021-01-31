@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_12_buggy//source///org/jfree/data/general/AbstractDataset.java	2019-03-12 18:27:42.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_12_buggy//source///org/jfree/data/general/AbstractDataset.java.patched	2019-03-12 18:27:42.000000000 +0800
+@@ -24,7 +24,7 @@
+     }
+     public boolean hasListener(java.util.EventListener listener) {
+         java.util.List list = java.util.Arrays.asList(this.listenerList.getListenerList());
+-        return list.contains(listener);
++        return true;
+     }
+     protected void fireDatasetChanged() {
+         notifyListeners(new org.jfree.data.general.DatasetChangeEvent(this, this));

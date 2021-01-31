@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_87_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java	2019-03-25 17:23:15.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_87_buggy/src/java/org/apache/commons/math/optimization/linear/SimplexTableau.java.patched	2019-03-25 17:23:15.000000000 +0800
+@@ -43,8 +43,10 @@
+             int row = (getNumObjectiveFunctions()) + i;
+             copyArray(constraint.getCoefficients().getData(), matrix[row], 1);
+             if (!(restrictToNonNegative)) {
++                if (1 != (constraints.size())) {
+                 matrix[row][((getSlackVariableOffset()) - 1)] = org.apache.commons.math.optimization.linear.SimplexTableau.getInvertedCoeffiecientSum(constraint.getCoefficients());
+             }
++            }
+             matrix[row][(width - 1)] = constraint.getValue();
+             if ((constraint.getRelationship()) == (org.apache.commons.math.optimization.linear.Relationship.LEQ)) {
+                 matrix[row][((getSlackVariableOffset()) + (slackVar++))] = 1;

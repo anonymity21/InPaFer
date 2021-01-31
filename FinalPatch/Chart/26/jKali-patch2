@@ -1,0 +1,20 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy//source//org/jfree/chart/axis/AxisCollection.java	2019-03-12 19:02:50.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy//source//org/jfree/chart/axis/AxisCollection.java.patched	2019-03-12 19:02:50.000000000 +0800
+@@ -29,17 +29,5 @@
+         if (edge == null) {
+             throw new java.lang.IllegalArgumentException("Null 'edge' argument.");
+         }
+-        if (edge == (org.jfree.chart.util.RectangleEdge.TOP)) {
+-            this.axesAtTop.add(axis);
+-        } else
+-            if (edge == (org.jfree.chart.util.RectangleEdge.BOTTOM)) {
+-                this.axesAtBottom.add(axis);
+-            } else
+-                if (edge == (org.jfree.chart.util.RectangleEdge.LEFT)) {
+-                    this.axesAtLeft.add(axis);
+-                } else
+-                    if (edge == (org.jfree.chart.util.RectangleEdge.RIGHT)) {
+-                        this.axesAtRight.add(axis);
+-                    }
+     }
+ }

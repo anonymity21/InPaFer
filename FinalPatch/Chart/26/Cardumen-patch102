@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/util/RectangleInsets.java	2019-03-14 16:08:15.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/util/RectangleInsets.java.patched	2019-03-14 16:08:15.000000000 +0800
+@@ -222,7 +222,7 @@
+     }
+     public void trim(java.awt.geom.Rectangle2D area) {
+         double w = area.getWidth();
+-        double h = area.getHeight();
++ 		double h = calculateBottomInset(area.getHeight());
+         double l = calculateLeftInset(w);
+         double r = calculateRightInset(w);
+         double t = calculateTopInset(h);

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java	2019-03-14 15:52:46.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/axis/Axis.java.patched	2019-03-14 15:52:47.000000000 +0800
+@@ -376,7 +376,7 @@
+                         hotspot = new java.awt.geom.Rectangle2D.Float((labelx - (w / 2.0F)), (labely - (h / 2.0F)), w, h);
+                         state.cursorRight((((insets.getLeft()) + (labelBounds.getWidth())) + (insets.getRight())));
+                     }
+-        if ((plotState != null) && (hotspot != null)) {
++ 		if ((plotState != null) && ((visible) != (visible))) {
+             org.jfree.chart.ChartRenderingInfo owner = plotState.getOwner();
+             org.jfree.chart.entity.EntityCollection entities = owner.getEntityCollection();
+             if (entities != null) {

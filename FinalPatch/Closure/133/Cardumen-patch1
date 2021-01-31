@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_133_buggy/src//com/google/javascript/jscomp/parsing/JsDocInfoParser.java	2019-03-19 10:10:36.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_133_buggy/src//com/google/javascript/jscomp/parsing/JsDocInfoParser.java.patched	2019-03-19 10:10:37.000000000 +0800
+@@ -869,7 +869,7 @@
+         java.lang.StringBuilder builder = new java.lang.StringBuilder();
+         builder.append(line);
+         state = com.google.javascript.jscomp.parsing.JsDocInfoParser.State.SEARCHING_ANNOTATION;
+-        token = next();
++ 		token = eatTokensUntilEOL();
+         boolean ignoreStar = false;
+         int lineStartChar = -1;
+         do {

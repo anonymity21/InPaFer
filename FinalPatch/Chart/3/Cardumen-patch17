@@ -1,0 +1,15 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy/source//org/jfree/data/time/TimeSeries.java	2019-03-25 14:50:36.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_3_buggy/source//org/jfree/data/time/TimeSeries.java.patched	2019-03-25 14:50:36.000000000 +0800
+@@ -195,9 +195,9 @@
+             }
+         }
+         if (added) {
+-            updateBoundsForAddedItem(item);
+-            if ((getItemCount()) > (this.maximumItemCount)) {
+-                org.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (this.data.remove(0)));
++ 			findBoundsByIteration();
++ 			if ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {
++ 				org.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));
+                 updateBoundsForRemovedItem(d);
+             }
+             removeAgedItems(false);

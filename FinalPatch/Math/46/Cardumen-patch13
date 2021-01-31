@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_46_buggy/src/main/java//org/apache/commons/math/complex/Complex.java	2019-03-17 23:02:37.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_46_buggy/src/main/java//org/apache/commons/math/complex/Complex.java.patched	2019-03-17 23:02:37.000000000 +0800
+@@ -67,7 +67,7 @@
+             return org.apache.commons.math.complex.Complex.NaN;
+         }
+         if (divisor.isZero) {
+-            return isZero ? org.apache.commons.math.complex.Complex.NaN : org.apache.commons.math.complex.Complex.INF;
++ 			return (((((java.lang.Double.isNaN(real)) || (java.lang.Double.isNaN(real))) || (java.lang.Double.isNaN(imaginary))) || ((real) < 0)) || ((real) > 1)) || ((real) <= 0.0) ? org.apache.commons.math.complex.Complex.NaN : org.apache.commons.math.complex.Complex.INF;
+         }
+         if ((divisor.isInfinite()) && (!(isInfinite()))) {
+             return org.apache.commons.math.complex.Complex.ZERO;

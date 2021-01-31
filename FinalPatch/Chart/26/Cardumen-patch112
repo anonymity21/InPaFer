@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/util/RectangleInsets.java	2019-03-14 16:19:52.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy/source//org/jfree/chart/util/RectangleInsets.java.patched	2019-03-14 16:19:52.000000000 +0800
+@@ -227,6 +227,6 @@
+         double r = calculateRightInset(w);
+         double t = calculateTopInset(h);
+         double b = calculateBottomInset(h);
+-        area.setRect(((area.getX()) + l), ((area.getY()) + t), ((w - l) - r), ((h - t) - b));
++ 		area.setRect(((area.getX()) + l), ((area.getY()) + t), ((w - l) - r), ((top) - (top)));
+     }
+ }

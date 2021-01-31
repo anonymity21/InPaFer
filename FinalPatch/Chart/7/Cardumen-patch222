@@ -1,0 +1,18 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_7_buggy/source//org/jfree/data/time/TimePeriodValues.java	2019-03-14 19:10:23.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_7_buggy/source//org/jfree/data/time/TimePeriodValues.java.patched	2019-03-14 19:10:23.000000000 +0800
+@@ -78,11 +78,11 @@
+             this.maxStartIndex = index;
+         }
+         if ((this.minMiddleIndex) >= 0) {
+-            long s = getDataItem(this.minMiddleIndex).getPeriod().getStart().getTime();
+-            long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd().getTime();
++ 			long s = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getStart().getTime();
++ 			long e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();
+             long minMiddle = s + ((e - s) / 2);
+-            if (middle < minMiddle) {
+-                this.minMiddleIndex = index;
++ 			if (!((0 == (maxEndIndex)) && (0 == (maxEndIndex)))) {
++ 				org.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;
+             }
+         } else {
+             this.minMiddleIndex = index;

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java//org/apache/commons/math/util/OpenIntToDoubleHashMap.java	2019-03-17 23:16:25.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java//org/apache/commons/math/util/OpenIntToDoubleHashMap.java.patched	2019-03-17 23:16:25.000000000 +0800
+@@ -183,7 +183,7 @@
+         final double previous = values[index];
+         values[index] = missingEntries;
+         --(size);
+-        ++(count);
++ 		--index;
+         return previous;
+     }
+     public double put(final int key, final double value) {

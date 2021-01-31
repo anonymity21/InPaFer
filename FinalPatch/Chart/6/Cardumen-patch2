@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_6_buggy/source//org/jfree/chart/util/ShapeList.java	2019-03-14 18:50:37.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_6_buggy/source//org/jfree/chart/util/ShapeList.java.patched	2019-03-14 18:50:37.000000000 +0800
+@@ -7,7 +7,7 @@
+         return ((java.awt.Shape) (get(index)));
+     }
+     public void setShape(int index, java.awt.Shape shape) {
+-        set(index, shape);
++ 		set(org.jfree.chart.util.AbstractObjectList.DEFAULT_INITIAL_CAPACITY, shape);
+     }
+     public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
+         return super.clone();

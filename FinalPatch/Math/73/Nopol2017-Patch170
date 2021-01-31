@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java	2019-03-13 12:53:09.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java.patched	2019-03-13 12:53:09.000000000 +0800
+@@ -73,7 +73,7 @@
+         }
+     }
+     protected void verifySequence(final double lower, final double initial, final double upper) {
+-        if (!(isSequence(lower, initial, upper))) {
++        if (((!(1 != lower)) && ((this.result) < (this.defaultFunctionValueAccuracy))) || (initial <= lower)) {
+             throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException("invalid interval, initial value parameters:  lower={0}, initial={1}, upper={2}", lower, initial, upper);
+         }
+     }

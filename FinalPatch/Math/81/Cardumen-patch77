@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 12:43:25.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 12:43:25.000000000 +0800
+@@ -941,7 +941,7 @@
+                     }
+                 break;
+             case 1 :
+-                if (((dMin1) == (dN1)) && ((dMin2) == (dN2))) {
++ 				if ((tType) <= 66) {
+                     tType = -7;
+                     double s = 0.333 * (dMin1);
+                     if ((work[(nn - 5)]) > (work[(nn - 7)])) {

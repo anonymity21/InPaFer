@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_62_buggy//src/com/google/javascript/jscomp/LightweightMessageFormatter.java	2019-03-18 19:28:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_62_buggy//src/com/google/javascript/jscomp/LightweightMessageFormatter.java.patched	2019-03-18 19:28:10.000000000 +0800
+@@ -43,7 +43,7 @@
+             b.append(sourceExcerpt);
+             b.append('\n');
+             int charno = error.getCharno();
+-            if (((excerpt.equals(com.google.javascript.jscomp.SourceExcerptProvider.SourceExcerpt.LINE)) && (0 <= charno)) && (charno < (sourceExcerpt.length()))) {
++            if (((excerpt.equals(com.google.javascript.jscomp.SourceExcerptProvider.SourceExcerpt.LINE)) && (0 <= charno)) && (charno <= (sourceExcerpt.length()))) {
+                 for (int i = 0; i < charno; i++) {
+                     char c = sourceExcerpt.charAt(i);
+                     if (java.lang.Character.isWhitespace(c)) {

@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java	2019-03-13 12:59:48.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_28_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexSolver.java.patched	2019-03-13 12:59:48.000000000 +0800
+@@ -68,8 +68,10 @@
+                         }
+                     }
+                 }
++                if (minRatioPositions.isEmpty()) {
+                 return minRow;
+             }
++            }
+         return minRatioPositions.get(0);
+     }
+     protected void doIteration(final org.apache.commons.math3.optimization.linear.SimplexTableau tableau) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.optimization.linear.UnboundedSolutionException {

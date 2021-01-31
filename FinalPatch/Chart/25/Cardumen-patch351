@@ -1,0 +1,18 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java	2019-03-14 20:46:33.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java.patched	2019-03-14 20:46:33.000000000 +0800
+@@ -64,12 +64,12 @@
+         } else {
+             this.rowKeys.add(rowKey);
+             row = new org.jfree.data.KeyedObjects();
+-            this.rows.add(row);
++ 			org.jfree.data.KeyedObjects2D.this.rows.add(row);
+         }
+         row.setObject(columnKey, object);
+-        int columnIndex = this.columnKeys.indexOf(columnKey);
++ 		int columnIndex = rowKeys.size();
+         if (columnIndex < 0) {
+-            this.columnKeys.add(columnKey);
++ 			org.jfree.data.KeyedObjects2D.this.columnKeys.add(columnKey);
+         }
+     }
+     public void removeObject(java.lang.Comparable rowKey, java.lang.Comparable columnKey) {

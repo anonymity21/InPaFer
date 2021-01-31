@@ -1,0 +1,14 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_24_buggy//src/main/java//org/apache/commons/math3/optimization/univariate/BrentOptimizer.java	2019-03-18 15:03:39.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_24_buggy//src/main/java//org/apache/commons/math3/optimization/univariate/BrentOptimizer.java.patched	2019-03-18 15:03:40.000000000 +0800
+@@ -97,6 +97,11 @@
+                     d = (org.apache.commons.math3.optimization.univariate.BrentOptimizer.GOLDEN_SECTION) * e;
+                 }
+                 if ((org.apache.commons.math3.util.FastMath.abs(d)) < tol1) {
++                    if (v < x) {
++                        b = x;
++                    } else {
++                        a = x;
++                    }
+                     if (d >= 0) {
+                         u = x + tol1;
+                     } else {

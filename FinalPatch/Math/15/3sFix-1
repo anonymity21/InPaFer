@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_15_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java	2020-02-02 20:46:53.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_15_buggy/src/main/java/org/apache/commons/math3/util/FastMath.java.patched	2020-02-02 20:46:54.000000000 +0800
+@@ -756,7 +756,7 @@
+         }
+         if (x < 0) {
+             if ((y >= (org.apache.commons.math3.util.FastMath.TWO_POWER_52)) || (y <= (-(org.apache.commons.math3.util.FastMath.TWO_POWER_52)))) {
+-                return org.apache.commons.math3.util.FastMath.pow((-x), y);
++                return java.lang.Math.pow(x, y);
+             }
+             if (y == ((long) (y))) {
+                 return (((long) (y)) & 1) == 0 ? org.apache.commons.math3.util.FastMath.pow((-x), y) : -(org.apache.commons.math3.util.FastMath.pow((-x), y));

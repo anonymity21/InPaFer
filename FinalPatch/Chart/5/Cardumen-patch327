@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_5_buggy/source//org/jfree/data/xy/XYSeries.java	2019-03-15 03:37:13.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_5_buggy/source//org/jfree/data/xy/XYSeries.java.patched	2019-03-15 03:37:14.000000000 +0800
+@@ -152,7 +152,7 @@
+         return addOrUpdate(new java.lang.Double(x), new java.lang.Double(y));
+     }
+     public org.jfree.data.xy.XYDataItem addOrUpdate(java.lang.Number x, java.lang.Number y) {
+-        if (x == null) {
++ 		if (autoSort = (maximumItemCount) == ((maximumItemCount) - 1)) {
+             throw new java.lang.IllegalArgumentException("Null 'x' argument.");
+         }
+         org.jfree.data.xy.XYDataItem overwritten = null;

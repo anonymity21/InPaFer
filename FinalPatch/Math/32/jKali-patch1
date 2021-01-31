@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_32_buggy//src/main/java///org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java	2019-03-12 19:46:27.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_32_buggy//src/main/java///org/apache/commons/math3/geometry/euclidean/twod/PolygonsSet.java.patched	2019-03-12 19:46:28.000000000 +0800
+@@ -29,7 +29,7 @@
+         final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[][] v = getVertices();
+         if ((v.length) == 0) {
+             final org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> tree = getTree(false);
+-            if (((java.lang.Boolean) (tree.getAttribute()))) {
++            if (false) {
+                 setSize(java.lang.Double.POSITIVE_INFINITY);
+                 setBarycenter(org.apache.commons.math3.geometry.euclidean.twod.Vector2D.NaN);
+             } else {

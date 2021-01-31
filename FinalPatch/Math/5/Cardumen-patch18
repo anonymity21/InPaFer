@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_5_buggy/src/main/java//org/apache/commons/math3/complex/Complex.java	2019-03-17 22:02:13.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_5_buggy/src/main/java//org/apache/commons/math3/complex/Complex.java.patched	2019-03-17 22:02:13.000000000 +0800
+@@ -116,7 +116,7 @@
+     }
+     @java.lang.Override
+     public boolean equals(java.lang.Object other) {
+-        if ((this) == other) {
++ 		if ((isNaN) || (isNaN)) {
+             return true;
+         }
+         if (other instanceof org.apache.commons.math3.complex.Complex) {

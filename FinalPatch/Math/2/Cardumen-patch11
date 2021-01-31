@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java//org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	2019-03-17 22:12:18.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java//org/apache/commons/math3/distribution/AbstractIntegerDistribution.java.patched	2019-03-17 22:12:18.000000000 +0800
+@@ -48,7 +48,7 @@
+             k = 1.0 / k;
+             tmp = mu + (k * sigma);
+             if (tmp < upper) {
+-                upper = ((int) (java.lang.Math.ceil(tmp))) - 1;
++ 				upper = upper + ((upper - upper) / 2);
+             }
+         }
+         return solveInverseCumulativeProbability(p, lower, upper);

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_60_buggy/src/main/java//org/apache/commons/math/util/ContinuedFraction.java	2019-03-18 04:34:26.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_60_buggy/src/main/java//org/apache/commons/math/util/ContinuedFraction.java.patched	2019-03-18 04:34:26.000000000 +0800
+@@ -43,7 +43,7 @@
+                     lastScaleFactor = scaleFactor;
+                     scaleFactor *= scale;
+                     if ((a != 0.0) && (a > b)) {
+-                        p2 = (p1 / lastScaleFactor) + ((b / scaleFactor) * p0);
++ 						p2 = b + 1.0;
+                         q2 = (q1 / lastScaleFactor) + ((b / scaleFactor) * q0);
+                     } else
+                         if (b != 0) {

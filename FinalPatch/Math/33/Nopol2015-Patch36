@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_33_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java	2019-03-13 12:45:19.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_33_buggy/src/main/java/org/apache/commons/math3/optimization/linear/SimplexTableau.java.patched	2019-03-13 12:45:19.000000000 +0800
+@@ -140,6 +140,7 @@
+         for (int i = getNumObjectiveFunctions(); i < (getArtificialVariableOffset()); i++) {
+             final double entry = tableau.getEntry(0, i);
+             if ((org.apache.commons.math3.util.Precision.compareTo(entry, 0.0, maxUlps)) > 0) {
++                if ((org.apache.commons.math3.optimization.linear.SimplexTableau.NEGATIVE_VAR_COLUMN_LABEL.length()) != (this.numArtificialVariables))
+                 columnsToDrop.add(i);
+             }
+         }

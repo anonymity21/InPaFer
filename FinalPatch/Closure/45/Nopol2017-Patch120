@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_45_buggy/src/com/google/javascript/rhino/Node.java	2019-03-13 12:48:45.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_45_buggy/src/com/google/javascript/rhino/Node.java.patched	2019-03-13 12:48:45.000000000 +0800
+@@ -951,8 +951,10 @@
+     public java.lang.String checkTreeEquals(com.google.javascript.rhino.Node node2) {
+         com.google.javascript.rhino.Node.NodeMismatch diff = checkTreeEqualsImpl(node2);
+         if (diff != null) {
++            if ((this.type) < 32) {
+             return ((((((("Node tree inequality:" + "\nTree1:\n") + (toStringTree())) + "\n\nTree2:\n") + (node2.toStringTree())) + "\n\nSubtree1: ") + (diff.nodeA.toStringTree())) + "\n\nSubtree2: ") + (diff.nodeB.toStringTree());
+         }
++        }
+         return null;
+     }
+     com.google.javascript.rhino.Node.NodeMismatch checkTreeEqualsImpl(com.google.javascript.rhino.Node node2) {

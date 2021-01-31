@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_30_buggy/src/main/java//org/apache/commons/math3/stat/inference/MannWhitneyUTest.java	2019-03-13 23:45:34.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_30_buggy/src/main/java//org/apache/commons/math3/stat/inference/MannWhitneyUTest.java.patched	2019-03-13 23:45:34.000000000 +0800
+@@ -34,7 +34,7 @@
+         return org.apache.commons.math3.util.FastMath.max(U1, U2);
+     }
+     private double calculateAsymptoticPValue(final double Umin, final int n1, final int n2) throws org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException {
+-        final int n1n2prod = n1 * n2;
++        final double n1n2prod = n1 * n2;
+         final double EU = n1n2prod / 2.0;
+         final double VarU = (n1n2prod * ((n1 + n2) + 1)) / 12.0;
+         final double z = (Umin - EU) / (org.apache.commons.math3.util.FastMath.sqrt(VarU));

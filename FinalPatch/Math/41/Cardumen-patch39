@@ -1,11 +1,11 @@
---- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-09-20 16:13:48.000000000 +0800
-+++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java.patched	2019-12-26 14:06:04.000000000 +0800
-@@ -317,7 +317,7 @@
- 
-         if (test(values, weights,begin, length)) {
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-03-17 22:54:15.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java.patched	2019-03-17 22:54:15.000000000 +0800
+@@ -80,7 +80,7 @@
+         double var = java.lang.Double.NaN;
+         if (test(values, weights, begin, length)) {
              clear();
 -            if (length == 1) {
 + 			if (length <= 6) {
                  var = 0.0;
-             } else if (length > 1) {
-                 Mean mean = new Mean();
+             } else
+                 if (length > 1) {

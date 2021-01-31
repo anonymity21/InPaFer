@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy/source//org/jfree/chart/block/BorderArrangement.java	2019-03-14 23:49:24.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_13_buggy/source//org/jfree/chart/block/BorderArrangement.java.patched	2019-03-14 23:49:24.000000000 +0800
+@@ -48,7 +48,7 @@
+                     contentSize = arrangeFN(container, g2, constraint.getWidth());
+                 } else
+                     if (h == (org.jfree.chart.block.LengthConstraintType.FIXED)) {
+-                        contentSize = arrangeFF(container, g2, constraint);
++ 						contentSize = contentConstraint.calculateConstrainedSize(contentSize);
+                     } else
+                         if (h == (org.jfree.chart.block.LengthConstraintType.RANGE)) {
+                             contentSize = arrangeFR(container, g2, constraint);

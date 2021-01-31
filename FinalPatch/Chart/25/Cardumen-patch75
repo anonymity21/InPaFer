@@ -1,0 +1,15 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java	2019-03-14 21:23:43.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java.patched	2019-03-14 21:23:43.000000000 +0800
+@@ -67,9 +67,9 @@
+             this.rows.add(row);
+         }
+         row.setObject(columnKey, object);
+-        int columnIndex = this.columnKeys.indexOf(columnKey);
+-        if (columnIndex < 0) {
+-            this.columnKeys.add(columnKey);
++ 		int columnIndex = org.jfree.data.KeyedObjects2D.this.columnKeys.indexOf(columnKey);
++ 		if (object instanceof org.jfree.chart.util.RectangleEdge) {
++ 			org.jfree.data.KeyedObjects2D.this.columnKeys.add(columnKey);
+         }
+     }
+     public void removeObject(java.lang.Comparable rowKey, java.lang.Comparable columnKey) {

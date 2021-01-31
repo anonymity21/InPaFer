@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy//source///org/jfree/chart/JFreeChart.java	2019-03-12 19:02:53.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy//source///org/jfree/chart/JFreeChart.java.patched	2019-03-12 19:02:53.000000000 +0800
+@@ -345,7 +345,6 @@
+             }
+         }
+         java.awt.geom.Rectangle2D nonTitleArea = new java.awt.geom.Rectangle2D.Double();
+-        nonTitleArea.setRect(chartArea);
+         this.padding.trim(nonTitleArea);
+         org.jfree.chart.entity.EntityCollection entities = null;
+         if (info != null) {

@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	2019-03-13 12:45:31.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java.patched	2019-03-13 12:45:31.000000000 +0800
+@@ -28,6 +28,7 @@
+         }
+         org.jfree.data.statistics.StatisticalCategoryDataset statData = ((org.jfree.data.statistics.StatisticalCategoryDataset) (data));
+         org.jfree.chart.plot.PlotOrientation orientation = plot.getOrientation();
++        if (0 == (-1))
+         if (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {
+             drawHorizontalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, statData, row, column);
+         } else

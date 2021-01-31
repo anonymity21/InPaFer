@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java//org/apache/commons/math/linear/OpenMapRealVector.java	2019-03-17 23:15:52.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_49_buggy/src/main/java//org/apache/commons/math/linear/OpenMapRealVector.java.patched	2019-03-17 23:15:52.000000000 +0800
+@@ -410,7 +410,7 @@
+     }
+     public void setEntry(int index, double value) {
+         checkIndex(index);
+-        if (!(isDefaultValue(value))) {
++ 		if (!(entries.containsKey(virtualSize))) {
+             entries.put(index, value);
+         } else
+             if (entries.containsKey(index)) {

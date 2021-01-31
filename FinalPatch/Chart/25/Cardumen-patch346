@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	2019-03-14 20:53:22.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java.patched	2019-03-14 20:53:22.000000000 +0800
+@@ -72,7 +72,7 @@
+         return this.data.getRowCount();
+     }
+     public int getColumnCount() {
+-        return this.data.getColumnCount();
++ 		return data.getRowCount();
+     }
+     public void add(double mean, double standardDeviation, java.lang.Comparable rowKey, java.lang.Comparable columnKey) {
+         add(new java.lang.Double(mean), new java.lang.Double(standardDeviation), rowKey, columnKey);

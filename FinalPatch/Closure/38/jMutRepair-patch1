@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_38_buggy//src//com/google/javascript/jscomp/CodeConsumer.java	2019-03-12 19:25:38.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_38_buggy//src//com/google/javascript/jscomp/CodeConsumer.java.patched	2019-03-12 19:25:38.000000000 +0800
+@@ -129,7 +129,7 @@
+     void addNumber(double x) {
+         char prev = getLastChar();
+         boolean negativeZero = com.google.javascript.jscomp.CodeConsumer.isNegativeZero(x);
+-        if ((x < 0) && (prev == '-')) {
++        if ((x <= 0) && (prev == '-')) {
+             add(" ");
+         }
+         if ((((long) (x)) == x) && (!negativeZero)) {

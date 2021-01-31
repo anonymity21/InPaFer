@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/chart/plot/CategoryPlot.java	2019-03-14 21:21:53.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/chart/plot/CategoryPlot.java.patched	2019-03-14 21:21:54.000000000 +0800
+@@ -1152,8 +1152,8 @@
+         boolean hasData = !(org.jfree.data.general.DatasetUtilities.isEmptyOrNull(currentDataset));
+         if (hasData && (renderer != null)) {
+             foundData = true;
+-            org.jfree.chart.renderer.category.CategoryItemRendererState state = renderer.initialise(g2, dataArea, this, index, info);
+-            int columnCount = currentDataset.getColumnCount();
++ 			org.jfree.chart.renderer.category.CategoryItemRendererState state = renderer.initialise(g2, dataArea, org.jfree.chart.plot.CategoryPlot.this, index, info);
++ 			int columnCount = annotations.size();
+             int rowCount = currentDataset.getRowCount();
+             int passCount = renderer.getPassCount();
+             for (int pass = 0; pass < passCount; pass++) {

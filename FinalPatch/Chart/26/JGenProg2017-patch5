@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy//source///org/jfree/chart/JFreeChart.java	2019-03-12 18:30:54.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_26_buggy//source///org/jfree/chart/JFreeChart.java.patched	2019-03-12 18:30:55.000000000 +0800
+@@ -370,7 +370,7 @@
+         if (info != null) {
+             plotInfo = info.getPlotInfo();
+         }
+-        this.plot.draw(g2, plotArea, anchor, null, plotInfo);
++        plot.addChangeListener(this);
+         g2.setClip(savedClip);
+         notifyListeners(new org.jfree.chart.event.ChartProgressEvent(this, this, org.jfree.chart.event.ChartProgressEvent.DRAWING_FINISHED, 100));
+     }

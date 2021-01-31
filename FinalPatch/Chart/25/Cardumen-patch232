@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/general/DatasetUtilities.java	2019-03-14 20:56:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/general/DatasetUtilities.java.patched	2019-03-14 20:56:10.000000000 +0800
+@@ -207,7 +207,7 @@
+         }
+         for (int r = 0; r < rowCount; r++) {
+             for (int c = 0; c < columnCount; c++) {
+-                if ((dataset.getValue(r, c)) != null) {
++ 				if (columnCount < (dataset.getRowCount())) {
+                     return false;
+                 }
+             }

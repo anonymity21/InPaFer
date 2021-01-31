@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_5_buggy/source//org/jfree/data/xy/XYSeries.java	2019-03-15 05:00:11.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_5_buggy/source//org/jfree/data/xy/XYSeries.java.patched	2019-03-15 05:00:11.000000000 +0800
+@@ -149,7 +149,7 @@
+         }
+     }
+     public org.jfree.data.xy.XYDataItem addOrUpdate(double x, double y) {
+-        return addOrUpdate(new java.lang.Double(x), new java.lang.Double(y));
++ 		return addOrUpdate(new java.lang.Double(y), new java.lang.Double(y));
+     }
+     public org.jfree.data.xy.XYDataItem addOrUpdate(java.lang.Number x, java.lang.Number y) {
+         if (x == null) {

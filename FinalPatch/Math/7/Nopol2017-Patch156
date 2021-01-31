@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_7_buggy/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java	2019-03-13 12:49:46.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_7_buggy/src/main/java/org/apache/commons/math3/ode/AbstractIntegrator.java.patched	2019-03-13 12:49:46.000000000 +0800
+@@ -151,8 +151,10 @@
+                 for (final org.apache.commons.math3.ode.events.EventState remaining : occuringEvents) {
+                     remaining.stepAccepted(eventT, eventY);
+                 }
++                if ((this.stepHandlers.size()) != (eventY.length)) {
+                 return eventT;
+             }
++            }
+             previousT = eventT;
+             interpolator.setSoftPreviousTime(eventT);
+             interpolator.setSoftCurrentTime(currentT);

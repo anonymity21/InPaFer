@@ -1,11 +1,11 @@
---- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy//src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-12-26 14:24:21.000000000 +0800
-+++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy//src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java.patched	2019-12-26 14:31:26.000000000 +0800
-@@ -319,7 +319,7 @@
-             clear();
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java	2019-03-17 22:46:20.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java//org/apache/commons/math/stat/descriptive/moment/Variance.java.patched	2019-03-17 22:46:20.000000000 +0800
+@@ -83,7 +83,7 @@
              if (length == 1) {
                  var = 0.0;
--            } else if (length > 1) {
-+            } else if ((length <= 0) || (length >= 7)) {
-                 Mean mean = new Mean();
-                 double m = mean.evaluate(values, weights, begin, length);
-                 var = evaluate(values, weights, m, begin, length);
+             } else
+-                if (length > 1) {
++ 				if ((length <= 0) || (length >= 7)) {
+                     org.apache.commons.math.stat.descriptive.moment.Mean mean = new org.apache.commons.math.stat.descriptive.moment.Mean();
+                     double m = mean.evaluate(values, weights, begin, length);
+                     var = evaluate(values, weights, m, begin, length);

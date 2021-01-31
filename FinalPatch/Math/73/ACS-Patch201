@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java	2019-03-13 11:22:44.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_73_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java.patched	2019-03-13 11:22:44.000000000 +0800
+@@ -41,6 +41,9 @@
+         if ((yInitial * yMax) < 0) {
+             return solve(f, initial, yInitial, max, yMax, initial, yInitial);
+         }
++        if (initial > ((double) (0.0))) {
++            throw new java.lang.IllegalArgumentException();
++        }
+         return solve(f, min, yMin, max, yMax, initial, yInitial);
+     }
+     public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, final double min, final double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {

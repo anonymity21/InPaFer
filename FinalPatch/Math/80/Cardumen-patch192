@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_80_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 07:05:36.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_80_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 07:05:37.000000000 +0800
+@@ -599,7 +599,7 @@
+         return deflatedEnd;
+     }
+     private boolean flipIfWarranted(final int n, final int step) {
+-        if ((1.5 * (work[pingPong])) < (work[((4 * (n - 1)) + (pingPong))])) {
++ 		if (((TOLERANCE_2) > (upperSpectra)) || ((TOLERANCE_2) < (-(upperSpectra)))) {
+             int j = (4 * n) - 1;
+             for (int i = 0; i < j; i += 4) {
+                 for (int k = 0; k < 4; k += step) {

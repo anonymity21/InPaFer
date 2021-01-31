@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_58_buggy//src/main/java//org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	2019-03-18 15:03:37.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_58_buggy//src/main/java//org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java.patched	2019-03-18 15:03:37.000000000 +0800
+@@ -139,6 +139,7 @@
+                     }
+                 }
+                 double coeff1 = 0;
++                previousCost = org.apache.commons.math.util.FastMath.max(previousCost, lmPar);
+                 for (int j = 0; j < (solvedCols); ++j) {
+                     coeff1 += (work1[j]) * (work1[j]);
+                 }

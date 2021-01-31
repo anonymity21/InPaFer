@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java	2019-03-13 12:48:39.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_105_buggy/src/java/org/apache/commons/math/stat/regression/SimpleRegression.java.patched	2019-03-13 12:48:39.000000000 +0800
+@@ -15,7 +15,9 @@
+     public void addData(double x, double y) {
+         if ((n) == 0) {
+             xbar = x;
++            if (y <= x) {
+             ybar = y;
++            }
+         } else {
+             double dx = x - (xbar);
+             double dy = y - (ybar);

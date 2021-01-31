@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_104_buggy//src/java///org/apache/commons/math/special/Gamma.java	2019-03-25 17:19:38.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_104_buggy//src/java///org/apache/commons/math/special/Gamma.java.patched	2019-03-25 17:19:38.000000000 +0800
+@@ -34,7 +34,7 @@
+             if (x == 0.0) {
+                 ret = 0.0;
+             } else
+-                if ((a >= 1.0) && (x > a)) {
++                if ((a >= 1.0) && (x >= a)) {
+                     ret = 1.0 - (org.apache.commons.math.special.Gamma.regularizedGammaQ(a, x, epsilon, maxIterations));
+                 } else {
+                     double n = 0.0;

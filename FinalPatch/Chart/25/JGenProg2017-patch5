@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy//source///org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	2019-03-12 18:30:44.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy//source///org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java.patched	2019-03-12 18:30:44.000000000 +0800
+@@ -16,7 +16,6 @@
+         java.lang.Number result = null;
+         org.jfree.data.statistics.MeanAndStandardDeviation masd = ((org.jfree.data.statistics.MeanAndStandardDeviation) (this.data.getObject(row, column)));
+         if (masd != null) {
+-            result = masd.getMean();
+         }
+         return result;
+     }

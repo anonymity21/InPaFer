@@ -1,0 +1,18 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_4_buggy/source/org/jfree/chart/plot/XYPlot.java	2020-01-28 21:26:35.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_4_buggy/source/org/jfree/chart/plot/XYPlot.java.patched	2020-01-28 21:26:36.000000000 +0800
+@@ -1871,6 +1871,7 @@
+                         result = org.jfree.data.Range.combine(result, org.jfree.data.general.DatasetUtilities.findRangeBounds(d));
+                     }
+                 }
++                if (r != null) {
+                 java.util.Collection c = r.getAnnotations();
+                 java.util.Iterator i = c.iterator();
+                 while (i.hasNext()) {
+@@ -1881,6 +1882,7 @@
+                 } 
+             }
+         } 
++        } 
+         java.util.Iterator it = includedAnnotations.iterator();
+         while (it.hasNext()) {
+             org.jfree.chart.annotations.XYAnnotationBoundsInfo xyabi = ((org.jfree.chart.annotations.XYAnnotationBoundsInfo) (it.next()));

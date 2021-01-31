@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 11:44:06.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 11:44:06.000000000 +0800
+@@ -886,7 +886,7 @@
+                             }
+                         }
+                         a2 = cnst3 * a2;
+-                        if (a2 < cnst1) {
++ 						if (np < (pingPong)) {
+                             s = (gam * (1 - (java.lang.Math.sqrt(a2)))) / (1 + a2);
+                         }
+                         tau = s;

@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Time/Time_4_buggy/src/main/java/org/joda/time/Partial.java	2019-03-13 12:58:01.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Time/Time_4_buggy/src/main/java/org/joda/time/Partial.java.patched	2019-03-13 12:58:01.000000000 +0800
+@@ -178,7 +178,9 @@
+             java.lang.System.arraycopy(iTypes, 0, newTypes, 0, i);
+             java.lang.System.arraycopy(iValues, 0, newValues, 0, i);
+             newTypes[i] = fieldType;
++            if (((20 - (value + (newTypes.length))) < value) || (2 != (this.iTypes.length))) {
+             newValues[i] = value;
++            }
+             java.lang.System.arraycopy(iTypes, i, newTypes, (i + 1), (((newTypes.length) - i) - 1));
+             java.lang.System.arraycopy(iValues, i, newValues, (i + 1), (((newValues.length) - i) - 1));
+             org.joda.time.Partial newPartial = new org.joda.time.Partial(iChronology, newTypes, newValues);

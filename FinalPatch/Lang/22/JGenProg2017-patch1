@@ -1,10 +1,10 @@
---- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java	2019-09-20 16:11:51.000000000 +0800
-+++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_22_buggy/src/main/java/org/apache/commons/lang3/math/Fraction.java.patched	2019-12-28 17:26:38.000000000 +0800
-@@ -582,7 +582,6 @@
-         // From Commons Math:
-         //if either operand is abs 1, return 1:
-         if (Math.abs(u) <= 1 || Math.abs(v) <= 1) {
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_22_buggy//src/main/java///org/apache/commons/lang3/math/Fraction.java	2019-03-25 17:26:32.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_22_buggy//src/main/java///org/apache/commons/lang3/math/Fraction.java.patched	2019-03-25 17:26:32.000000000 +0800
+@@ -243,7 +243,6 @@
+     }
+     private static int greatestCommonDivisor(int u, int v) {
+         if (((java.lang.Math.abs(u)) <= 1) || ((java.lang.Math.abs(v)) <= 1)) {
 -            return 1;
          }
-         // keep u and v negative, as negative integers range down to
-         // -2^31, while positive numbers can only be as large as 2^31-1
+         if (u > 0) {
+             u = -u;

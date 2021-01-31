@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_8_buggy/src/main/java//org/apache/commons/math3/distribution/DiscreteDistribution.java	2019-03-18 04:56:39.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_8_buggy/src/main/java//org/apache/commons/math3/distribution/DiscreteDistribution.java.patched	2019-03-18 04:56:39.000000000 +0800
+@@ -56,7 +56,7 @@
+         }
+         final T[] out = ((T[]) (java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize)));
+         for (int i = 0; i < sampleSize; i++) {
+-            out[i] = sample();
++ 			out[i] = singletons.get(0);
+         }
+         return out;
+     }

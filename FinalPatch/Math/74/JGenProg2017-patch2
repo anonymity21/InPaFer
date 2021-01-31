@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	2019-03-12 19:42:24.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_74_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java.patched	2019-03-12 19:42:24.000000000 +0800
+@@ -28,6 +28,7 @@
+         org.apache.commons.math.ode.events.CombinedEventsManager manager = addEndTimeChecker(t0, t, eventsHandlersManager);
+         start(t0, y, t);
+         interpolator.reinitialize(stepStart, stepSize, scaled, nordsieck);
++        setMaxGrowth(10.0);
+         interpolator.storeTime(stepStart);
+         double hNew = stepSize;
+         interpolator.rescale(hNew);

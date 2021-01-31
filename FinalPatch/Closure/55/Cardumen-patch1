@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_55_buggy/src//com/google/javascript/jscomp/FunctionRewriter.java	2019-03-19 10:08:29.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_55_buggy/src//com/google/javascript/jscomp/FunctionRewriter.java.patched	2019-03-19 10:08:30.000000000 +0800
+@@ -74,7 +74,7 @@
+                     return false;
+                 }
+             }
+-            return true;
++ 			return com.google.javascript.jscomp.NodeUtil.mayHaveSideEffects(node);
+         }
+         @java.lang.Override
+         public void visit(com.google.javascript.jscomp.NodeTraversal traversal, com.google.javascript.rhino.Node node, com.google.javascript.rhino.Node parent) {

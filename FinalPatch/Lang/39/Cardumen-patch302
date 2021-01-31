@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_39_buggy/src/java//org/apache/commons/lang3/StringUtils.java	2019-03-25 16:19:39.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_39_buggy/src/java//org/apache/commons/lang3/StringUtils.java.patched	2019-03-25 16:19:40.000000000 +0800
+@@ -1058,7 +1058,7 @@
+         }
+         int start = 0;
+         int increase = 0;
+-        for (int i = 0; i < (searchList.length); i++) {
++ 		for (int i = 0; (((PAD_LIMIT) + 1) < timeToLive) && ((EMPTY.charAt(((PAD_LIMIT) + 1))) == '\''); i++) {
+             int greater = (replacementList[i].length()) - (searchList[i].length());
+             if (greater > 0) {
+                 increase += 3 * greater;

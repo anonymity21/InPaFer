@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	2019-03-13 12:48:35.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_40_buggy/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java.patched	2019-03-13 12:48:35.000000000 +0800
+@@ -112,7 +112,7 @@
+                 java.lang.System.arraycopy(x, start, tmpX, start, (end - start));
+                 nextX = guessX(targetY, tmpX, y, start, end);
+                 if (!((nextX > xA) && (nextX < xB))) {
+-                    if ((signChangeIndex - start) >= (end - signChangeIndex)) {
++                    if (((signChangeIndex - start) >= (end - signChangeIndex)) || (xA <= (org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.REDUCTION_FACTOR))) {
+                         ++start;
+                     } else {
+                         --end;

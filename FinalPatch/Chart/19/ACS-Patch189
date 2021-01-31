@@ -1,0 +1,22 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_19_buggy/source/org/jfree/chart/plot/CategoryPlot.java	2019-03-13 11:22:31.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_19_buggy/source/org/jfree/chart/plot/CategoryPlot.java.patched	2019-03-13 11:22:31.000000000 +0800
+@@ -177,6 +177,9 @@
+         notifyListeners(new org.jfree.chart.event.PlotChangeEvent(this));
+     }
+     public int getDomainAxisIndex(org.jfree.chart.axis.CategoryAxis axis) {
++        if (axis == null) {
++            throw new java.lang.IllegalArgumentException();
++        }
+         return this.domainAxes.indexOf(axis);
+     }
+     public org.jfree.chart.axis.AxisLocation getDomainAxisLocation() {
+@@ -299,6 +302,9 @@
+                 result = p.getRangeAxisIndex(axis);
+             }
+         }
++        if (axis == null) {
++            throw new java.lang.IllegalArgumentException();
++        }
+         return result;
+     }
+     public org.jfree.chart.axis.AxisLocation getRangeAxisLocation() {

@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_53_buggy/src/java/org/apache/commons/lang/time/DateUtils.java	2019-03-13 12:44:10.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_53_buggy/src/java/org/apache/commons/lang/time/DateUtils.java.patched	2019-03-13 12:44:11.000000000 +0800
+@@ -193,6 +193,7 @@
+         }
+         if ((date.getTime()) != time) {
+             date.setTime(time);
++            if ((minutes <= (org.apache.commons.lang.time.DateUtils.RANGE_WEEK_RELATIVE)) || (!(round && (minutes < seconds))))
+             val.setTime(date);
+         }
+         boolean roundUp = false;

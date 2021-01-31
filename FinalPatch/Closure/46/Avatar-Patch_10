@@ -1,0 +1,22 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_46_buggy/src/com/google/javascript/rhino/jstype/RecordType.java	2020-02-05 13:11:20.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Closure/Closure_46_buggy/src/com/google/javascript/rhino/jstype/RecordType.java.patched	2020-02-05 13:11:21.000000000 +0800
+@@ -50,19 +50,6 @@
+         }
+         return super.defineProperty(propertyName, type, inferred, propertyNode);
+     }
+-    @java.lang.Override
+-    public com.google.javascript.rhino.jstype.JSType getLeastSupertype(com.google.javascript.rhino.jstype.JSType that) {
+-        if (!(that.isRecordType())) {
+-            return super.getLeastSupertype(that);
+-        }
+-        com.google.javascript.rhino.jstype.RecordTypeBuilder builder = new com.google.javascript.rhino.jstype.RecordTypeBuilder(registry);
+-        for (java.lang.String property : properties.keySet()) {
+-            if ((that.toMaybeRecordType().hasProperty(property)) && (that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(getPropertyType(property)))) {
+-                builder.addProperty(property, getPropertyType(property), getPropertyNode(property));
+-            }
+-        }
+-        return builder.build();
+-    }
+     com.google.javascript.rhino.jstype.JSType getGreatestSubtypeHelper(com.google.javascript.rhino.jstype.JSType that) {
+         if (that.isRecordType()) {
+             com.google.javascript.rhino.jstype.RecordType thatRecord = that.toMaybeRecordType();

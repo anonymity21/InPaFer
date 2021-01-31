@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_82_buggy/src/main/java//org/apache/commons/math/optimization/linear/SimplexSolver.java	2019-03-17 23:21:05.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_82_buggy/src/main/java//org/apache/commons/math/optimization/linear/SimplexSolver.java.patched	2019-03-17 23:21:05.000000000 +0800
+@@ -27,7 +27,7 @@
+             final double entry = tableau.getEntry(i, col);
+             if ((org.apache.commons.math.util.MathUtils.compareTo(entry, 0, epsilon)) >= 0) {
+                 final double ratio = rhs / entry;
+-                if (ratio < minRatio) {
++ 				if ((java.lang.Math.abs(minRatio)) > ratio) {
+                     minRatio = ratio;
+                     minRatioPos = i;
+                 }

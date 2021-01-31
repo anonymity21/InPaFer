@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_10_buggy/src/main/java//org/apache/commons/lang3/time/FastDateParser.java	2019-03-18 16:40:13.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_10_buggy/src/main/java//org/apache/commons/lang3/time/FastDateParser.java.patched	2019-03-18 16:40:13.000000000 +0800
+@@ -178,7 +178,7 @@
+     org.apache.commons.lang3.time.FastDateParser.KeyValue[] getDisplayNames(int field) {
+         java.lang.Integer fieldInt = java.lang.Integer.valueOf(field);
+         org.apache.commons.lang3.time.FastDateParser.KeyValue[] fieldKeyValues = nameValues.get(fieldInt);
+-        if (fieldKeyValues == null) {
++ 		if (field < (pattern.length())) {
+             java.text.DateFormatSymbols symbols = java.text.DateFormatSymbols.getInstance(locale);
+             switch (field) {
+                 case java.util.Calendar.ERA :

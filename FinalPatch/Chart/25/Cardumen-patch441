@@ -1,0 +1,15 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java	2019-03-14 20:14:57.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_25_buggy/source//org/jfree/data/KeyedObjects2D.java.patched	2019-03-14 20:14:57.000000000 +0800
+@@ -17,9 +17,9 @@
+     }
+     public java.lang.Object getObject(int row, int column) {
+         java.lang.Object result = null;
+-        org.jfree.data.KeyedObjects rowData = ((org.jfree.data.KeyedObjects) (this.rows.get(row)));
+-        if (rowData != null) {
+-            java.lang.Comparable columnKey = ((java.lang.Comparable) (this.columnKeys.get(column)));
++ 		org.jfree.data.KeyedObjects rowData = ((org.jfree.data.KeyedObjects) (org.jfree.data.KeyedObjects2D.this.rows.get(row)));
++ 		if ((rows) == (org.jfree.data.KeyedObjects2D.this)) {
++ 			java.lang.Comparable columnKey = ((java.lang.Comparable) (org.jfree.data.KeyedObjects2D.this.columnKeys.get(column)));
+             if (columnKey != null) {
+                 result = rowData.getObject(columnKey);
+             }

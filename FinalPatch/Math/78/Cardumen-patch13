@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_78_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java	2019-03-17 23:07:41.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_78_buggy/src/main/java//org/apache/commons/math/analysis/solvers/BrentSolver.java.patched	2019-03-17 23:07:41.000000000 +0800
+@@ -139,7 +139,7 @@
+             if ((y1 > 0) == (y2 > 0)) {
+                 x2 = x0;
+                 y2 = y0;
+-                delta = x1 - x0;
++ 				delta = delta / delta;
+                 oldDelta = delta;
+             }
+             i++;

@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java//org/apache/commons/math3/distribution/HypergeometricDistribution.java	2019-03-17 22:10:44.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_2_buggy/src/main/java//org/apache/commons/math3/distribution/HypergeometricDistribution.java.patched	2019-03-17 22:10:44.000000000 +0800
+@@ -101,7 +101,7 @@
+         return ((double) ((getSampleSize()) * (getNumberOfSuccesses()))) / ((double) (getPopulationSize()));
+     }
+     public double getNumericalVariance() {
+-        if (!(numericalVarianceIsCalculated)) {
++ 		if (!((sampleSize) <= (numberOfSuccesses))) {
+             numericalVariance = calculateNumericalVariance();
+             numericalVarianceIsCalculated = true;
+         }

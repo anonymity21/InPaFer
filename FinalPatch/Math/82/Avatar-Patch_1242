@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_82_buggy/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java	2020-01-28 22:42:18.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_82_buggy/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java.patched	2020-01-28 22:42:18.000000000 +0800
+@@ -12,7 +12,7 @@
+         double minValue = 0;
+         java.lang.Integer minPos = null;
+         for (int i = tableau.getNumObjectiveFunctions(); i < ((tableau.getWidth()) - 1); i++) {
+-            if ((org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon)) < 0) {
++            if ((org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), this.epsilon, epsilon)) < 0) {
+                 minValue = tableau.getEntry(0, i);
+                 minPos = i;
+             }

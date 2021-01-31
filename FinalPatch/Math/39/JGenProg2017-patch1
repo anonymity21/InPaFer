@@ -1,0 +1,12 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_39_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java	2019-03-12 19:31:44.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_39_buggy//src/main/java///org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java.patched	2019-03-12 19:31:44.000000000 +0800
+@@ -90,6 +90,9 @@
+                         yTmp[j] = (y[j]) + ((stepSize) * sum);
+                     }
+                     computeDerivatives(((stepStart) + ((c[(k - 1)]) * (stepSize))), yTmp, yDotK[k]);
++                    if ((forward && (((stepStart) + (stepSize)) > t)) || ((!forward) && (((stepStart) + (stepSize)) < t))) {
++                        stepSize = t - (stepStart);
++                    }
+                 }
+                 for (int j = 0; j < (y0.length); ++j) {
+                     double sum = (b[0]) * (yDotK[0][j]);

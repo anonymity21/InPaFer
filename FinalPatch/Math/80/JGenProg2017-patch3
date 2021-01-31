@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_80_buggy//src/main/java///org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-12 19:30:59.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_80_buggy//src/main/java///org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-12 19:30:59.000000000 +0800
+@@ -414,7 +414,7 @@
+         if (sumOffDiag == 0) {
+             return;
+         }
+-        flipIfWarranted(n, 2);
++        java.util.Arrays.sort(realEigenvalues);
+         initialSplits(n);
+         tType = 0;
+         dMin1 = 0;

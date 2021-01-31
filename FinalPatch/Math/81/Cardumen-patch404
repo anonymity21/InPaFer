@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java	2019-03-18 12:31:06.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_81_buggy/src/main/java//org/apache/commons/math/linear/EigenDecompositionImpl.java.patched	2019-03-18 12:31:06.000000000 +0800
+@@ -517,7 +517,7 @@
+     private int goodStep(final int start, final int end) {
+         g = 0.0;
+         int deflatedEnd = end;
+-        for (boolean deflating = true; deflating;) {
++ 		for (boolean deflating = (java.lang.Math.floor(dMin)) == (dMin); deflating;) {
+             if (start >= deflatedEnd) {
+                 return deflatedEnd;
+             }

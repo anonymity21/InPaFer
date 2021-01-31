@@ -1,11 +1,11 @@
---- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source/org/jfree/data/time/TimeSeries.java	2019-09-20 16:09:36.000000000 +0800
-+++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source/org/jfree/data/time/TimeSeries.java.patched	2019-12-16 22:24:39.000000000 +0800
-@@ -928,7 +928,7 @@
-             throw new IllegalArgumentException(
-                     "Requires start on or before end.");
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source//org/jfree/data/time/TimeSeries.java	2019-03-25 14:51:51.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Chart/Chart_9_buggy/source//org/jfree/data/time/TimeSeries.java.patched	2019-03-25 14:51:52.000000000 +0800
+@@ -341,7 +341,7 @@
+         if ((start.compareTo(end)) > 0) {
+             throw new java.lang.IllegalArgumentException("Requires start on or before end.");
          }
 -        boolean emptyRange = false;
-+        boolean emptyRange = start instanceof org.jfree.data.time.Day;
++ 		boolean emptyRange = start instanceof org.jfree.data.time.Day;
          int startIndex = getIndex(start);
          if (startIndex < 0) {
              startIndex = -(startIndex + 1);

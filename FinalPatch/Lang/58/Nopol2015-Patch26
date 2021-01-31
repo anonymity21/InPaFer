@@ -1,0 +1,10 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java	2019-03-13 12:44:51.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_58_buggy/src/java/org/apache/commons/lang/math/NumberUtils.java.patched	2019-03-13 12:44:51.000000000 +0800
+@@ -134,6 +134,7 @@
+                         }
+                         return org.apache.commons.lang.math.NumberUtils.createBigInteger(numeric);
+                     }
++                    if ((-1) < expPos)
+                     throw new java.lang.NumberFormatException((str + " is not a valid number."));
+                 case 'f' :
+                 case 'F' :
