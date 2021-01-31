@@ -1,0 +1,41 @@
+package patchfilter.util;
+
+import patchfilter.model.entity.LineInfo;
+import patchfilter.model.util.StateType;
+
+public class TraceLine {
+	
+	private LineInfo lineInfo;
+	private StateType stateType;
+	
+	public TraceLine() {
+	}
+
+	public TraceLine(LineInfo line, StateType stateType) {
+		this.lineInfo = line;
+		this.stateType = stateType;
+	}
+
+	
+	public LineInfo getLineInfo() {
+		return lineInfo;
+	}
+
+	public void setLineInfo(LineInfo lineInfo) {
+		this.lineInfo = lineInfo;
+	}
+
+	public StateType getStateType() {
+		return stateType;
+	}
+
+	public void setStateType(StateType stateType) {
+		this.stateType = stateType;
+	}
+
+	@Override
+	public String toString() {
+		return "TraceLine [lineInfo=" + lineInfo.toString() + ", stateType=" + stateType + "]";
+	}
+		
+}

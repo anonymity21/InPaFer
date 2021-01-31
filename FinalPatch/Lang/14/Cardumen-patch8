@@ -1,0 +1,11 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_14_buggy/src/main/java//org/apache/commons/lang3/StringUtils.java	2019-12-18 11:21:36.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Lang/Lang_14_buggy/src/main/java//org/apache/commons/lang3/StringUtils.java.patched	2019-12-18 11:34:34.000000000 +0800
+@@ -779,7 +779,7 @@
+      * @since 3.0 Changed signature from equals(String, String) to equals(CharSequence, CharSequence)
+      */
+     public static boolean equals(CharSequence cs1, CharSequence cs2) {
+-        if (cs1 == cs2) {
++        if (org.apache.commons.lang3.StringUtils.endsWith(cs1, cs2)) {
+             return true;
+         }
+         if (cs1 == null || cs2 == null) {

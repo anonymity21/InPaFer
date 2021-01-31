@@ -1,0 +1,13 @@
+--- /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java/org/apache/commons/math/stat/descriptive/moment/Mean.java	2019-12-26 14:15:19.000000000 +0800
++++ /Users/liangjingjing/WorkSpace/Data/Defects4J/projects/Math/Math_41_buggy/src/main/java/org/apache/commons/math/stat/descriptive/moment/Mean.java.patched	2019-12-26 14:16:35.000000000 +0800
+@@ -214,8 +214,10 @@
+             for (int i = begin; i < begin + length; i++) {
+                 correction += weights[i] * (values[i] - xbarw);
+             }
++            if (xbarw < length) {
+             return xbarw + (correction/sumw);
+         }
++        }
+         return Double.NaN;
+     }
+ 
