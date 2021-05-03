@@ -42,8 +42,7 @@ The following figure is the screenshot of our approach.
 #### Step 1, Obtain the extra information
 
 * Run the Main class `patchfilter.model.Main.PatchVariationMain`:
-
-   `Run As`→`Run Configurations…` →`Arguments` : set the following arguments as Program Arguments.
+	* `Run As`→`Run Configurations…` →`Arguments` : set the following arguments as Program Arguments.
    		* `-project` : the project name of buggy program of benchmark. (`-project=Math` for the example)
    		* `-start` : the bug id of start running project. (`-start=41` for the example)
    		* `-end` : the bug id of end running project. (`-end=41` for the example)
