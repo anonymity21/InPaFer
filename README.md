@@ -7,7 +7,7 @@
 * V.Structure of the project
 
 ## I. Introduction
-This repository has two branch: *master* branch showing the implementaion of Eclipse plugin and *experiment* branch showing the evaluation of simulated experiment.
+This repository has two branch: `*master* branch` showing the implementaion of Eclipse plugin and `*experiment* branch` showing the evaluation of simulated experiment.
 
 *InPaFer* is an interactive patch filtering approach to provide tool support for patch review and debugging. We implemented our approach as an Eclipse plugin project, which includes a user interface to allow the developer to easily browse the patches and the questions, as well as a diff view to visualize the effect of a patch on a test execution.
 The following figure is the screenshot of our approach.
@@ -44,7 +44,6 @@ The following figure is the screenshot of our approach.
 * Run the Main class `patchfilter.model.Main.PatchVariationMain`:
 
    `Run As`→`Run Configurations…` →`Arguments` : set the following arguments as Program Arguments.
-
    		* `-project` : the project name of buggy program of benchmark. (`-project=Math` for the example)
    		* `-start` : the bug id of start running project. (`-start=41` for the example)
    		* `-end` : the bug id of end running project. (`-end=41` for the example)
